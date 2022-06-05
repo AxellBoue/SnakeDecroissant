@@ -7,6 +7,7 @@ public class GameHandle : MonoBehaviour
     [SerializeField] private Snake snake;
     [SerializeField] private FoodManager foodManager;
     private LvlGrid lvlgrid;
+    public List<Transform> dangerZones;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,7 @@ public class GameHandle : MonoBehaviour
 
         lvlgrid = new LvlGrid(160,120);
         snake.Setup(lvlgrid);
-        lvlgrid.Setup(snake,foodManager);
+        lvlgrid.Setup(snake,foodManager,dangerZones);
     }
 
     // Update is called once per frame

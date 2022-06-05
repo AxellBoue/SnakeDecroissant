@@ -25,10 +25,15 @@ public class SnakeHitbox : MonoBehaviour
             snake.gridMoveTimerMax += 0.1f; 
         }
 
+        if (collision.gameObject.tag == "Danger")
+        {
+            snake.state = Snake.State.Dead;
+            Debug.Log("Game Over !!");
+        }
 
 
     }
- 
+
     public void OnTriggerExit2D(Collider2D collision)
     {
         Debug.Log("Out");

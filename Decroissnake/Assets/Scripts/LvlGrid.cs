@@ -11,7 +11,8 @@ public class LvlGrid : MonoBehaviour
     private GameObject food;
     private Snake snake;
     private FoodManager foodManager;
-
+    public List<Transform> dangerZones;
+    public int indexDangerZones;
 
     public LvlGrid(int w, int h)
     {
@@ -20,12 +21,17 @@ public class LvlGrid : MonoBehaviour
 
 
     }
-    public void Setup(Snake snake,FoodManager foodManager)
+    public void Setup(Snake snake,FoodManager foodManager,List<Transform> dangerZones)
     {
         this.snake = snake;
         this.foodManager = foodManager;
-
-        SpawnFood();
+        this.dangerZones = dangerZones;
+        indexDangerZones = 0;
+        foreach (Transform t in dangerZones)
+        {
+            t.gameObject.SetActive(false);
+        }
+        //SpawnFood();
 
     }
 
@@ -56,7 +62,7 @@ public class LvlGrid : MonoBehaviour
 
     }
 
-    public bool SnakeMoved(Vector2Int snakeGridPos )
+    /*public bool SnakeMoved(Vector2Int snakeGridPos )
     {
         if((foodGridPos.y <= snakeGridPos.y+1 && foodGridPos.y >= snakeGridPos.y - 1) 
             && (foodGridPos.x <= snakeGridPos.x + 1 && foodGridPos.x >= snakeGridPos.x - 1) )
@@ -73,7 +79,8 @@ public class LvlGrid : MonoBehaviour
         }
        
         
-    }
+    }*/
+
     public bool TestCapitaliste(GameObject item)
     {
         switch (item.GetComponent<Food>().type)
@@ -90,11 +97,13 @@ public class LvlGrid : MonoBehaviour
     {
         for (int i = 0 ; i < foodManager.ItemList.Count; i++)
         {
-            if ((foodManager.ItemList[i].transform.position.y <= snakeGridPos.y + 1 && foodManager.ItemList[i].transform.position.y >= snakeGridPos.y - 1)
-            && (foodManager.ItemList[i].transform.position.x <= snakeGridPos.x + 1 && foodManager.ItemList[i].transform.position.x >= snakeGridPos.x - 1))
+            if ((foodManager.ItemList[i].transform.position.y <= snakeGridPos.y + 2 && foodManager.ItemList[i].transform.position.y >= snakeGridPos.y - 2)
+            && (foodManager.ItemList[i].transform.position.x <= snakeGridPos.x + 2 && foodManager.ItemList[i].transform.position.x >= snakeGridPos.x - 2))
             {
                 if (foodManager.ItemList[i].GetComponent<Food>().type == Food.ItemType.Capitaliste)
                 {
+                    dangerZones[indexDangerZones].gameObject.SetActive(true);
+                    indexDangerZones++;
                     snake.snakeSize++;
                     snake.CreateSnakeBod();
                     snake.decroisTimer = 5f;
@@ -123,5 +132,7 @@ public class LvlGrid : MonoBehaviour
 
 
     }
+
+   
 
 }

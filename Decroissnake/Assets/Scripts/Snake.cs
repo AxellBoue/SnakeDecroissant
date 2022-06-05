@@ -38,7 +38,7 @@ public class Snake : MonoBehaviour
     {
 
         gridPosition = new Vector2Int(0, 0);
-        gridMoveSpeed = 2;
+        gridMoveSpeed = 3;
         gridMoveDirection = Direction.Right;
         gridMoveTimerMax = 0.1f;
         gridMoveTimer = gridMoveTimerMax;
