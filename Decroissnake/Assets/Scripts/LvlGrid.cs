@@ -97,7 +97,7 @@ public class LvlGrid : MonoBehaviour
                 {
                     snake.snakeSize++;
                     snake.CreateSnakeBod();
-
+                    snake.decroisTimer = 5f;
                 }
                 Object.Destroy(foodManager.ItemList[i]);
                 Debug.Log("Nomed nomed");

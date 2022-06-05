@@ -27,6 +27,7 @@ public class Snake : MonoBehaviour
     public int snakeSize;
     private List<SnakeMovePosition> snakePosList;
     private List<SnakeBodypart> snakeBodList;
+    public float decroisTimer;
 
     public void Setup(LvlGrid lvlgrid)
     {
@@ -39,8 +40,9 @@ public class Snake : MonoBehaviour
         gridPosition = new Vector2Int(0, 0);
         gridMoveSpeed = 2;
         gridMoveDirection = Direction.Right;
-        gridMoveTimerMax = 0.4f;
+        gridMoveTimerMax = 0.1f;
         gridMoveTimer = gridMoveTimerMax;
+        decroisTimer = 5f;
 
         snakePosList = new List<SnakeMovePosition>();
         snakeBodList = new List<SnakeBodypart>();
@@ -65,12 +67,12 @@ public class Snake : MonoBehaviour
             case State.Alive:
                 OnControl();
                 GridMovement();
+                Decroissance();
                 break;
             case State.Dead:
                 break;
 
         }
-
     }
 
     private void OnControl()
@@ -98,7 +100,18 @@ public class Snake : MonoBehaviour
 
         }
     }
-
+    private void Decroissance()
+    {
+        decroisTimer -= Time.deltaTime;
+        if(decroisTimer <= 0)
+        {
+            decroisTimer = 5f;
+            //snakeBodList
+            snakeBodList.RemoveAt(snakeBodList.Count-1);
+            snakePosList.RemoveAt(snakePosList.Count-1);
+            snakeSize--;
+        }
+    }
     private void GridMovement()
     {
 

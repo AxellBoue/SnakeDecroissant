@@ -379,6 +379,7 @@
 "Assets/Scripts/LoadScene.cs"
 "Assets/Scripts/LvlGrid.cs"
 "Assets/Scripts/Snake.cs"
+"Assets/Scripts/SnakeHitbox.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs"
