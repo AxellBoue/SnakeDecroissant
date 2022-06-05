@@ -74,27 +74,44 @@ public class LvlGrid : MonoBehaviour
        
         
     }
-    public bool SnakeNomed(Vector2Int snakeGridPos)
+    public bool TestCapitaliste(GameObject item)
     {
-        
-        foreach (Vector2Int itemPos in foodManager.ItemPos)
+        switch (item.GetComponent<Food>().type)
         {
-            if ((itemPos.y <= snakeGridPos.y + 1 && itemPos.y >= snakeGridPos.y - 1)
-            && (itemPos.x <= snakeGridPos.x + 1 && itemPos.x >= snakeGridPos.x - 1))
+            default:
+            case Food.ItemType.Capitaliste : return true; 
+            case Food.ItemType.GreenWash : return false; 
+            case Food.ItemType.Militant : return false; 
+
+        }
+
+    }
+    public void SnakeNomed(Vector2Int snakeGridPos)
+    {
+        for (int i = 0 ; i < foodManager.ItemList.Count; i++)
+        {
+            if ((foodManager.ItemList[i].transform.position.y <= snakeGridPos.y + 1 && foodManager.ItemList[i].transform.position.y >= snakeGridPos.y - 1)
+            && (foodManager.ItemList[i].transform.position.x <= snakeGridPos.x + 1 && foodManager.ItemList[i].transform.position.x >= snakeGridPos.x - 1))
             {
-                Object.Destroy(food);
-                Debug.Log("Nom nom");
-                SpawnFood();
-                return true;
+                if (foodManager.ItemList[i].GetComponent<Food>().type == Food.ItemType.Capitaliste)
+                {
+                    snake.snakeSize++;
+                    snake.CreateSnakeBod();
+
+                }
+                Object.Destroy(foodManager.ItemList[i]);
+                Debug.Log("Nomed nomed");
+                //SpawnFood();
+                //foodManager.ItemPos.RemoveAt(i);
+                foodManager.ItemList.RemoveAt(i);
             }
             else
             {
-                return false;
+                //return false;
 
             }
 
         }
-        return false;
     }
     public void ValidateGridPos(Vector2Int gridPos)
     {

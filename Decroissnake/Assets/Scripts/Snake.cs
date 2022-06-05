@@ -39,7 +39,7 @@ public class Snake : MonoBehaviour
         gridPosition = new Vector2Int(0, 0);
         gridMoveSpeed = 2;
         gridMoveDirection = Direction.Right;
-        gridMoveTimerMax = 0.1f;
+        gridMoveTimerMax = 0.4f;
         gridMoveTimer = gridMoveTimerMax;
 
         snakePosList = new List<SnakeMovePosition>();
@@ -131,12 +131,14 @@ public class Snake : MonoBehaviour
 
             lvlgrid.ValidateGridPos(gridPosition);
 
-            bool snakeNomed = lvlgrid.SnakeMoved(gridPosition);
+            /*bool snakeNomed = lvlgrid.SnakeMoved(gridPosition);
+
             if (snakeNomed)
             {
                 snakeSize++;
                 CreateSnakeBod();
-            }
+            }*/
+            lvlgrid.SnakeNomed(gridPosition);
 
             if (snakePosList.Count >= snakeSize + 1)
             {
@@ -167,7 +169,7 @@ public class Snake : MonoBehaviour
         }
     }
 
-    private void CreateSnakeBod()
+    public void CreateSnakeBod()
     {
 
         snakeBodList.Add(new SnakeBodypart(snakeBodList.Count));
