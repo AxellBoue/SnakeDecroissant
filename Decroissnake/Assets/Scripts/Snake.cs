@@ -176,7 +176,7 @@ public class Snake : MonoBehaviour
 
 
             transform.position = new Vector3(gridPosition.x, gridPosition.y);
-            transform.eulerAngles = new Vector3(0, 0, GetAnglefromVector(gridMoveDirectionVector) - 90);
+            transform.eulerAngles = new Vector3(0, 0, GetAnglefromVector(gridMoveDirectionVector));
 
 
         }
@@ -227,7 +227,7 @@ public class Snake : MonoBehaviour
             GameObject bodypart = new GameObject("SnakeBody", typeof(SpriteRenderer));
             bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.snakeBodySprite;
             bodypart.GetComponent<SpriteRenderer>().sortingOrder = -bodyIndex;
-            bodypart.transform.localScale = new Vector3(2, 2, 1);
+            bodypart.transform.localScale = new Vector3(1, 1, 1);
             transform = bodypart.transform;
             this.bodypart = bodypart;
 
@@ -253,14 +253,14 @@ public class Snake : MonoBehaviour
 
                             break;
                         case Direction.Left:
-                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.Angle;
-                            angle = 0 + 45;
+                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.AngleGH;
+                            angle = 180;
 
                             break;
 
                         case Direction.Right:
-                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.Angle;
-                            angle = 0 - 45;
+                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.AngleDH;
+                            angle = 0;
 
                             break;
                     }
@@ -274,14 +274,14 @@ public class Snake : MonoBehaviour
 
                             break;
                         case Direction.Left:
-                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.Angle;
-                            angle = 180 + 45;
+                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.AngleGB;
+                            angle = 0;
 
                             break;
 
                         case Direction.Right:
-                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.Angle;
-                            angle = 180 - 45;
+                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.AngleDB;
+                            angle = 180;
 
                             break;
                     }
@@ -295,14 +295,14 @@ public class Snake : MonoBehaviour
 
                             break;
                         case Direction.Down:
-                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.Angle;
-                            angle = -45;
+                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.AngleGB;
+                            angle = 180;
 
                             break;
 
                         case Direction.Up:
-                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.Angle;
-                            angle = 45;
+                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.AngleGH;
+                            angle = 0;
 
                             break;
                     }
@@ -316,14 +316,14 @@ public class Snake : MonoBehaviour
 
                             break;
                         case Direction.Down: 
-                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.Angle;
-                            angle = 45;
+                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.AngleDB;
+                            angle = 0;
 
                             break;
 
                         case Direction.Up:
-                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.Angle;
-                            angle = -45;
+                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.AngleDH;
+                            angle = 180;
 
                             break;
                     }

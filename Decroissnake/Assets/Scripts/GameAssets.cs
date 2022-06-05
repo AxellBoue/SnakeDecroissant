@@ -15,7 +15,10 @@ public class GameAssets : MonoBehaviour
 	public Sprite snakeHeadSprite;
 	public Sprite snakeBodySprite;
 	public Sprite foodSprite;
-	public Sprite Angle;
+	public Sprite AngleDB;
+	public Sprite AngleDH;
+	public Sprite AngleGB;
+	public Sprite AngleGH;
 
 
 }
