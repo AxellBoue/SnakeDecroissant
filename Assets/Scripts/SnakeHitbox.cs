@@ -22,7 +22,8 @@ public class SnakeHitbox : MonoBehaviour
         Debug.Log("In");
         if(collision.gameObject.tag == "Militant")
         {
-            snake.gridMoveTimerMax += 0.1f; 
+            snake.gridMoveTimerMax += 0.1f;
+            snake.decroisTimerMax = 2f;
         }
 
         if (collision.gameObject.tag == "Danger")
@@ -41,6 +42,8 @@ public class SnakeHitbox : MonoBehaviour
         if (collision.gameObject.tag == "Militant")
         {
             snake.gridMoveTimerMax = 0.1f;
+            snake.decroisTimerMax = 10f;
+
         }
 
 

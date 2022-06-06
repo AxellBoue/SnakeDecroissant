@@ -28,6 +28,7 @@ public class Snake : MonoBehaviour
     private List<SnakeMovePosition> snakePosList;
     private List<SnakeBodypart> snakeBodList;
     public float decroisTimer;
+    public float decroisTimerMax;
     public FoodManager foodManager;
     public GameObject UIGameOver;
     public GameObject imageWin;
@@ -48,14 +49,17 @@ public class Snake : MonoBehaviour
         gridMoveDirection = Direction.Right;
         gridMoveTimerMax = 0.2f;
         gridMoveTimer = gridMoveTimerMax;
-        decroisTimer = 5f;
+
+        decroisTimerMax = 10f;
+        decroisTimer = 0f ;
+
         UIGameOver.SetActive(false);
         imageLose.SetActive(false);
         imageWin.SetActive(false);
 
         snakePosList = new List<SnakeMovePosition>();
         snakeBodList = new List<SnakeBodypart>();
-        snakeSize = 10;
+        snakeSize = 20;
         for (int i = 0; i < snakeSize; i++)
         {
             SnakeMovePosition snakeMovPos = new SnakeMovePosition(null, gridPosition, gridMoveDirection);
@@ -120,10 +124,11 @@ public class Snake : MonoBehaviour
     }
     private void Decroissance()
     {
-        decroisTimer -= Time.deltaTime;
-        if (decroisTimer <= 0)
+        decroisTimer += Time.deltaTime;
+        if (decroisTimer >= decroisTimerMax)
         {
-            decroisTimer = 5f;
+            Debug.Log("Oh no");
+            decroisTimer -= decroisTimerMax;
             snakeBodList[snakeBodList.Count - 1].detach = true;
             snakeBodList[snakeBodList.Count - 1].bodypart.GetComponent<SegmentPerdu>().detach = true;
             snakeBodList[snakeBodList.Count - 1].bodypart.GetComponent<SegmentPerdu>().target = foodManager.SetTargetBody();
