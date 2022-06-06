@@ -13,7 +13,7 @@ public class GameAssets : MonoBehaviour
 	}
 
 	public Sprite snakeHeadSprite;
-	public Sprite snakeBodySprite;
+	public Sprite[] snakeBodySprite;
 	public Sprite foodSprite;
 	public Sprite AngleDB;
 	public Sprite AngleDH;
@@ -22,3 +22,4 @@ public class GameAssets : MonoBehaviour
 
 
 }
+ 

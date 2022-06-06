@@ -28,10 +28,16 @@ public class Snake : MonoBehaviour
     private List<SnakeMovePosition> snakePosList;
     private List<SnakeBodypart> snakeBodList;
     public float decroisTimer;
+    public FoodManager foodManager;
+    public GameObject UIGameOver;
+    public GameObject imageWin;
+    public GameObject imageLose;
 
-    public void Setup(LvlGrid lvlgrid)
+
+    public void Setup(LvlGrid lvlgrid, FoodManager foodManager)
     {
         this.lvlgrid = lvlgrid;
+        this.foodManager = foodManager;
     }
 
     void Awake()
@@ -40,13 +46,16 @@ public class Snake : MonoBehaviour
         gridPosition = new Vector2Int(0, 0);
         gridMoveSpeed = 3;
         gridMoveDirection = Direction.Right;
-        gridMoveTimerMax = 0.1f;
+        gridMoveTimerMax = 0.2f;
         gridMoveTimer = gridMoveTimerMax;
         decroisTimer = 5f;
+        UIGameOver.SetActive(false);
+        imageLose.SetActive(false);
+        imageWin.SetActive(false);
 
         snakePosList = new List<SnakeMovePosition>();
         snakeBodList = new List<SnakeBodypart>();
-        snakeSize = 8;
+        snakeSize = 10;
         for (int i = 0; i < snakeSize; i++)
         {
             SnakeMovePosition snakeMovPos = new SnakeMovePosition(null,gridPosition, gridMoveDirection);
@@ -62,6 +71,13 @@ public class Snake : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (snakeSize <= 0)
+        {
+            state = State.Dead;
+            imageWin.SetActive(true);
+
+        }
+
         switch (state)
         {
             case State.Alive:
@@ -70,6 +86,8 @@ public class Snake : MonoBehaviour
                 Decroissance();
                 break;
             case State.Dead:
+                imageLose.SetActive(true);
+                UIGameOver.SetActive(true);
                 break;
 
         }
@@ -106,7 +124,8 @@ public class Snake : MonoBehaviour
         if(decroisTimer <= 0)
         {
             decroisTimer = 5f;
-            //snakeBodList
+            snakeBodList[snakeBodList.Count - 1].detach = true;
+            snakeBodList[snakeBodList.Count - 1].target = foodManager.SetTargetBody();
             snakeBodList.RemoveAt(snakeBodList.Count-1);
             snakePosList.RemoveAt(snakePosList.Count-1);
             snakeSize--;
@@ -222,17 +241,29 @@ public class Snake : MonoBehaviour
         private SnakeMovePosition snakeMovePos;
         private Transform transform;
         private GameObject bodypart;
+        public bool detach;
+        public Transform target;
+        private int num = 0;
         public SnakeBodypart(int bodyIndex) //constructeur
         {
             GameObject bodypart = new GameObject("SnakeBody", typeof(SpriteRenderer));
-            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.snakeBodySprite;
+            num = Random.Range(0, 10);
+            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.snakeBodySprite[num];
             bodypart.GetComponent<SpriteRenderer>().sortingOrder = -bodyIndex;
             bodypart.transform.localScale = new Vector3(1, 1, 1);
             transform = bodypart.transform;
             this.bodypart = bodypart;
+            detach = false;
 
         }
+        void Update()
+        {
+            if(detach)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, target.transform.position, 1f);
 
+            }
+        }
         public void SetSnakeMovePos(SnakeMovePosition snakeMovePos)
         {
             this.snakeMovePos = snakeMovePos;
@@ -248,7 +279,7 @@ public class Snake : MonoBehaviour
                     switch (snakeMovePos.GetPreviousSnakeDirection())
                     {
                         default:
-                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.snakeBodySprite;
+                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.snakeBodySprite[num];
                             angle = 0;
 
                             break;
@@ -269,7 +300,7 @@ public class Snake : MonoBehaviour
                     switch (snakeMovePos.GetPreviousSnakeDirection())
                     {
                         default:
-                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.snakeBodySprite;
+                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.snakeBodySprite[num];
                             angle = 180;
 
                             break;
@@ -290,7 +321,7 @@ public class Snake : MonoBehaviour
                     switch (snakeMovePos.GetPreviousSnakeDirection())
                     {
                         default:
-                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.snakeBodySprite;
+                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.snakeBodySprite[num];
                             angle = -90;
 
                             break;
@@ -311,7 +342,7 @@ public class Snake : MonoBehaviour
                     switch(snakeMovePos.GetPreviousSnakeDirection())
                     {
                         default: 
-                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.snakeBodySprite;
+                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.snakeBodySprite[num];
                             angle = 90;
 
                             break;

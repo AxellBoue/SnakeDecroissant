@@ -26,5 +26,20 @@ public class FoodManager : MonoBehaviour
         
     }
 
+    public Transform SetTargetBody()
+    {
+        Transform target;
+        List<GameObject> listGreenWash = new List<GameObject>();
+        foreach (GameObject item in ItemList)
+        {
+            if(item.tag == "GreenWash")
+            {
+                listGreenWash.Add(item);
+            }
 
+        }
+        target = listGreenWash[Random.Range(0, listGreenWash.Count-1)].transform;
+
+        return target;
+    }
 }

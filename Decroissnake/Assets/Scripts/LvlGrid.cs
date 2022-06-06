@@ -104,8 +104,14 @@ public class LvlGrid : MonoBehaviour
                 {
                     dangerZones[indexDangerZones].gameObject.SetActive(true);
                     indexDangerZones++;
-                    snake.snakeSize++;
-                    snake.CreateSnakeBod();
+                    snake.snakeSize ++;
+                    snake.CreateSnakeBod();                   
+                    snake.decroisTimer = 5f;
+                }
+                else if (foodManager.ItemList[i].GetComponent<Food>().type == Food.ItemType.Militant)
+                {
+                    dangerZones[indexDangerZones].gameObject.SetActive(true);
+                    indexDangerZones++;
                     snake.decroisTimer = 5f;
                 }
                 Object.Destroy(foodManager.ItemList[i]);
