@@ -62,3 +62,5 @@ MonoBehaviour:
   AngleDH: {fileID: 21300000, guid: 53de461e0bc1cc64ca1d33d43f5f8b55, type: 3}
   AngleGB: {fileID: 21300000, guid: 1663c97a2ffacaf43bc1c031870adfae, type: 3}
   AngleGH: {fileID: 21300000, guid: 0ce03b4345670cf4484f00519454f77d, type: 3}
+  FumeePrefab: {fileID: 3782903341503513599, guid: 0e6b4ba21aba61f4cb7fddc49498bd8d, type: 3}
+  ratioFumee: 8
