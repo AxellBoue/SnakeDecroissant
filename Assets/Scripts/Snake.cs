@@ -292,9 +292,13 @@ public class Snake : MonoBehaviour
                         default:
                             bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.snakeBodySprite[num];
                             angle = 0;
-                            if (num == 7 || num == 8 || num == 9)
+                            if (num == 8 || num == 9 || num == 10)
                             {
                                 GameAssets.instance.popFumee("vertical", transform.position);
+                            }
+                            else if (num == 7)
+                            {
+                                GameAssets.instance.PopPetrole("vertical", transform.position);
                             }
                             break;
                         case Direction.Left:
@@ -316,9 +320,13 @@ public class Snake : MonoBehaviour
                         default:
                             bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.snakeBodySprite[num];
                             angle = 180;
-                            if (num == 7 || num == 8 || num == 9)
+                            if (num == 8 || num == 9 || num == 10)
                             {
                                 GameAssets.instance.popFumee("vertical", transform.position);
+                            }
+                            else if (num == 7)
+                            {
+                                GameAssets.instance.PopPetrole("vertical", transform.position);
                             }
                             break;
                         case Direction.Left:
@@ -340,9 +348,13 @@ public class Snake : MonoBehaviour
                         default:
                             bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.snakeBodySprite[num];
                             angle = -90;
-                            if (num == 7 || num == 8 || num == 9)
+                            if (num == 8 || num == 9 || num == 10)
                             {
                                 GameAssets.instance.popFumee("horizontal", transform.position);
+                            }
+                            else if (num == 7)
+                            {
+                                GameAssets.instance.PopPetrole("horizontal", transform.position);
                             }
                             break;
                         case Direction.Down:
@@ -364,9 +376,13 @@ public class Snake : MonoBehaviour
                         default:
                             bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.snakeBodySprite[num];
                             angle = 90;
-                            if (num == 7 || num == 8 || num == 9)
+                            if (num == 8 || num == 9 || num == 10)
                             {
                                 GameAssets.instance.popFumee("horizontal", transform.position);
+                            }
+                            else if (num == 7)
+                            {
+                                GameAssets.instance.PopPetrole("horizontal", transform.position);
                             }
                             break;
                         case Direction.Down:
