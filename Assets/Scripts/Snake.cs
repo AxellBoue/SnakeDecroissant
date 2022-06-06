@@ -244,11 +244,16 @@ public class Snake : MonoBehaviour
         private Transform transform;
         public GameObject bodypart;
         public bool detach;
-        private int num = 0;
+        private int num = -1; 
+        static int prevNum = -1; 
         public SnakeBodypart(int bodyIndex) //constructeur
         {
             GameObject bodypart = new GameObject("SnakeBody", typeof(SpriteRenderer), typeof(SegmentPerdu));
-            num = Random.Range(0, 10);
+            while (num == -1 || num == prevNum) 
+            {
+                num = Random.Range(0, 10);
+            }
+            prevNum = num; 
             bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.snakeBodySprite[num];
             bodypart.GetComponent<SpriteRenderer>().sortingOrder = -bodyIndex;
             bodypart.transform.localScale = new Vector3(1, 1, 1);
