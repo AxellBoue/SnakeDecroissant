@@ -58,9 +58,17 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c52d3b668a4ee634886e5fc350f24707, type: 3}
   - {fileID: 21300000, guid: 9dbfd2915b04a8a478b77da386a2e4ae, type: 3}
   foodSprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  AngleDB: {fileID: 21300000, guid: cd7050a639cabe94581395bf1e27c456, type: 3}
-  AngleDH: {fileID: 21300000, guid: 53de461e0bc1cc64ca1d33d43f5f8b55, type: 3}
-  AngleGB: {fileID: 21300000, guid: 1663c97a2ffacaf43bc1c031870adfae, type: 3}
-  AngleGH: {fileID: 21300000, guid: 0ce03b4345670cf4484f00519454f77d, type: 3}
+  AngleDB:
+  - {fileID: 21300000, guid: cd7050a639cabe94581395bf1e27c456, type: 3}
+  - {fileID: 21300000, guid: 63e048f4b843cdf49befdfd8fcc4c134, type: 3}
+  AngleDH:
+  - {fileID: 21300000, guid: 53de461e0bc1cc64ca1d33d43f5f8b55, type: 3}
+  - {fileID: 21300000, guid: b083369aa2011194590c7345f312fefc, type: 3}
+  AngleGB:
+  - {fileID: 21300000, guid: 1663c97a2ffacaf43bc1c031870adfae, type: 3}
+  - {fileID: 21300000, guid: d1c8708f883f91544849bfc4581fa1dd, type: 3}
+  AngleGH:
+  - {fileID: 21300000, guid: 0ce03b4345670cf4484f00519454f77d, type: 3}
+  - {fileID: 21300000, guid: 02af6a49887684b478248c12463c8683, type: 3}
   FumeePrefab: {fileID: 3782903341503513599, guid: 0e6b4ba21aba61f4cb7fddc49498bd8d, type: 3}
   ratioFumee: 8

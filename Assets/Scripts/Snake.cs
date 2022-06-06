@@ -275,6 +275,11 @@ public class Snake : MonoBehaviour
             this.snakeMovePos = snakeMovePos;
             transform.position = new Vector3(snakeMovePos.GetGridPos().x, snakeMovePos.GetGridPos().y);
 
+            // definit si c'est un morceau en or ou pas
+            int isOr = 0;
+            if (num == 6) isOr = 1;
+
+
             float angle;
             //Fait pointer les segments dans la direction où le snake avance
             switch (snakeMovePos.GetDirection())
@@ -293,13 +298,13 @@ public class Snake : MonoBehaviour
                             }
                             break;
                         case Direction.Left:
-                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.AngleGH;
+                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.AngleGH[isOr];
                             angle = 180;
 
                             break;
 
                         case Direction.Right:
-                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.AngleDH;
+                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.AngleDH[isOr];
                             angle = 0;
 
                             break;
@@ -317,13 +322,13 @@ public class Snake : MonoBehaviour
                             }
                             break;
                         case Direction.Left:
-                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.AngleGB;
+                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.AngleGB[isOr];
                             angle = 0;
 
                             break;
 
                         case Direction.Right:
-                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.AngleDB;
+                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.AngleDB[isOr];
                             angle = 180;
 
                             break;
@@ -341,13 +346,13 @@ public class Snake : MonoBehaviour
                             }
                             break;
                         case Direction.Down:
-                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.AngleGB;
+                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.AngleGB[isOr];
                             angle = 180;
 
                             break;
 
                         case Direction.Up:
-                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.AngleGH;
+                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.AngleGH[isOr];
                             angle = 0;
 
                             break;
@@ -365,13 +370,13 @@ public class Snake : MonoBehaviour
                             }
                             break;
                         case Direction.Down:
-                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.AngleDB;
+                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.AngleDB[isOr];
                             angle = 0;
 
                             break;
 
                         case Direction.Up:
-                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.AngleDH;
+                            bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.AngleDH[isOr];
                             angle = 180;
 
                             break;
