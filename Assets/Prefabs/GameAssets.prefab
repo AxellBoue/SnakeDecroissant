@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1995259826742578988
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1995259826742578989}
+  - component: {fileID: 1995259826742578986}
+  m_Layer: 0
+  m_Name: GameAssets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1995259826742578989
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995259826742578988}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1995259826742578986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995259826742578988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bbc98ca3df46c04daf73dfcc288f1da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snakeHeadSprite: {fileID: 21300000, guid: 5d6bb6e957dde724fba6cb70306fb1af, type: 3}
+  snakeBodySprite:
+  - {fileID: 21300000, guid: ad5cffb32350ade42b8a2f3eaea597b5, type: 3}
+  - {fileID: 21300000, guid: 3f7e734b8dce750449678d267e13ed0b, type: 3}
+  - {fileID: 21300000, guid: ad5cffb32350ade42b8a2f3eaea597b5, type: 3}
+  - {fileID: 21300000, guid: 3f7e734b8dce750449678d267e13ed0b, type: 3}
+  - {fileID: 21300000, guid: ad5cffb32350ade42b8a2f3eaea597b5, type: 3}
+  - {fileID: 21300000, guid: 3f7e734b8dce750449678d267e13ed0b, type: 3}
+  - {fileID: 21300000, guid: 90fec8eebcc683a40b6927cb61ed8d30, type: 3}
+  - {fileID: 21300000, guid: 0810134b66da49f47af524684e1c2d89, type: 3}
+  - {fileID: 21300000, guid: bfa472d8cd74bc148ab178e524ed6bba, type: 3}
+  - {fileID: 21300000, guid: c52d3b668a4ee634886e5fc350f24707, type: 3}
+  - {fileID: 21300000, guid: 9dbfd2915b04a8a478b77da386a2e4ae, type: 3}
+  foodSprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  AngleDB: {fileID: 21300000, guid: cd7050a639cabe94581395bf1e27c456, type: 3}
+  AngleDH: {fileID: 21300000, guid: 53de461e0bc1cc64ca1d33d43f5f8b55, type: 3}
+  AngleGB: {fileID: 21300000, guid: 1663c97a2ffacaf43bc1c031870adfae, type: 3}
+  AngleGH: {fileID: 21300000, guid: 0ce03b4345670cf4484f00519454f77d, type: 3}
