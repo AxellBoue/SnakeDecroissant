@@ -38,7 +38,7 @@ public class FoodManager : MonoBehaviour
             }
 
         }
-        target = listGreenWash[Random.Range(0, listGreenWash.Count-1)].transform;
+        target = listGreenWash[Random.Range(0, listGreenWash.Count)].transform;
 
         return target;
     }
