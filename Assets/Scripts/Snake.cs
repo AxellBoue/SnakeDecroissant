@@ -33,6 +33,7 @@ public class Snake : MonoBehaviour
     public GameObject UIGameOver;
     public GameObject imageWin;
     public GameObject imageLose;
+    private SpriteRenderer sr;
 
 
     public void Setup(LvlGrid lvlgrid, FoodManager foodManager)
@@ -69,6 +70,7 @@ public class Snake : MonoBehaviour
 
 
         }
+        sr = GetComponent<SpriteRenderer>();
         state = State.Alive;
     }
 
@@ -102,9 +104,8 @@ public class Snake : MonoBehaviour
         //Controles
         if (Input.GetKeyDown(KeyCode.UpArrow) && gridMoveDirection != Direction.Down)
         {
-
-
             gridMoveDirection = Direction.Up;
+
         }
         if (Input.GetKeyDown(KeyCode.DownArrow) && gridMoveDirection != Direction.Up)
         {
@@ -202,6 +203,15 @@ public class Snake : MonoBehaviour
 
             transform.position = new Vector3(gridPosition.x, gridPosition.y);
             transform.eulerAngles = new Vector3(0, 0, GetAnglefromVector(gridMoveDirectionVector));
+            if (gridMoveDirection == Direction.Left)
+            {
+                sr.flipY = true;
+            }
+            else
+            {
+                sr.flipY = false;
+            }
+   
 
 
         }
