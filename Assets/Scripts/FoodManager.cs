@@ -29,17 +29,37 @@ public class FoodManager : MonoBehaviour
     public Transform SetTargetBody()
     {
         Transform target;
-        List<GameObject> listGreenWash = new List<GameObject>();
+        List<GameObject> listTarget = new List<GameObject>();
+        int num = -1;
+        int prevNum = -1; 
+
         foreach (GameObject item in ItemList)
         {
             if(item.tag == "GreenWash")
             {
-                listGreenWash.Add(item);
+                listTarget.Add(item);
             }
 
         }
-        target = listGreenWash[Random.Range(0, listGreenWash.Count)].transform;
 
+        if(listTarget.Count == 0)
+        {
+            foreach (GameObject item in ItemList)
+            {
+                if (item.tag == "Militant")
+                {
+                    listTarget.Add(item);
+                }
+
+            }
+        }
+
+        while (num == -1 || num == prevNum)
+        {
+            num = Random.Range(0, listTarget.Count);
+        }
+        prevNum = num;
+        target = listTarget[num].transform;
         return target;
     }
 }

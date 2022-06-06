@@ -16,13 +16,19 @@ public class SegmentPerdu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (detach)
+        if (detach && transform.position != target.transform.position)
         {
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, 0.2f);
 
-            if(transform.position == target.transform.position)
+            if(transform.position == target.transform.position && target.tag == "GreenWash")
             {
+                target.gameObject.GetComponent<GreenWash>().ActivationMilitantisme();
+                Destroy(gameObject);
+            }
 
+            else if(transform.position == target.transform.position && target.tag == "Militant")
+            {
+                Destroy(gameObject);
             }
         }
     }

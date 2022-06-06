@@ -5,7 +5,8 @@ using UnityEngine;
 public class GreenWash : MonoBehaviour
 {
     public bool activation;
-    public Sprite spriteMilitant;
+    public GameObject zoneMilitante;
+    public FoodManager foodManager;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,10 @@ public class GreenWash : MonoBehaviour
 
     public void ActivationMilitantisme()
     {
-        this.gameObject.GetComponent<SpriteRenderer>().sprite = spriteMilitant;
+        zoneMilitante.SetActive(true);
+        foodManager.ItemList.Remove(this.gameObject);
+        foodManager.ItemList.Add(zoneMilitante);
+        Destroy(gameObject);
+
     }
 }
