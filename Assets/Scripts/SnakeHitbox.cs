@@ -14,21 +14,20 @@ public class SnakeHitbox : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        snake.hitboxScript = this;
         camOldPos = cam.transform.position;
         camOldSize = cam.orthographicSize;
         inMilit = false;
+        target = new Vector3(this.transform.position.x, this.transform.position.y, cam.transform.position.z);
+        cam.GetComponent<FollowTarget>().target = this.transform;
+
     }
 
     // Update is called once per frame
     void Update()
     {
        transform.position = Vector3.MoveTowards(transform.position, snake.transform.position, 1f);
-
-        if(!inMilit)
-        {
-            StartCoroutine("UnfocusCamera");
-
-        }
+      
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -39,6 +38,9 @@ public class SnakeHitbox : MonoBehaviour
             inMilit = true;
             snake.gridMoveTimerMax += 0.1f;
             snake.decroisTimerMax = 2f;
+            GameAssets.instance.ClignotteMilit();
+
+
         }
 
         if (collision.gameObject.tag == "Danger")
@@ -57,10 +59,10 @@ public class SnakeHitbox : MonoBehaviour
         if (collision.gameObject.tag == "Militant")
         {
             snake.gridMoveTimerMax = 0.1f;
-            snake.decroisTimerMax = 10f;
-            //cam.transform.position = camOldPos;
-            //cam.orthographicSize=camOldSize;            
+            snake.decroisTimerMax = 10f;        
             inMilit = false;
+            GameAssets.instance.StopCligno();
+
         }
 
 
@@ -68,7 +70,6 @@ public class SnakeHitbox : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        //Debug.Log(cam.orthographicSize);
 
         if (collision.gameObject.tag == "Militant")
         {
@@ -77,13 +78,22 @@ public class SnakeHitbox : MonoBehaviour
                 snake.gridMoveTimerMax += 0.001f;
 
             }
-            target = new Vector3(collision.transform.position.x, collision.transform.position.y, cam.transform.position.z);
-            //Vector3 target = new Vector3(this.transform.position.x, this.transform.position.y, cam.transform.position.z);
+            //target = collision.transform;
+            //target = new Vector3(collision.transform.position.x, collision.transform.position.y, cam.transform.position.z);
 
-            StartCoroutine("FocusCamera");
+            //StartCoroutine("FocusCamera");
 
         }
       
+    }
+    public void ZoomCamera()
+    {
+
+        if (cam.orthographicSize >= 40f)
+        {
+            cam.orthographicSize -= 0.5f;
+        }
+
     }
 
     IEnumerator FocusCamera()
@@ -93,13 +103,16 @@ public class SnakeHitbox : MonoBehaviour
 
         if(inMilit)
         {
-            cam.transform.position = Vector3.MoveTowards(cam.transform.position, target, 0.5f);
+            
+
+            //cam.transform.position = Vector3.MoveTowards(cam.transform.position, target, 0.5f);
             //cam.transform.position = target;
 
-            if (cam.transform.position == target && cam.orthographicSize >= 40f)
+            /*if (cam.orthographicSize >= 40f)
             {
                 cam.orthographicSize--;
-            }
+            }*/
+
 
 
         }
@@ -112,15 +125,15 @@ public class SnakeHitbox : MonoBehaviour
 
         if(!inMilit)
         {
-            if (cam.orthographicSize <= 60f)
+            /*if (cam.orthographicSize <= 60f)
             {
                 cam.orthographicSize += 0.1f;
-            }
+            }*/
 
             if (cam.transform.position != camOldPos)
             {
-                cam.transform.position = Vector3.MoveTowards(cam.transform.position, camOldPos, 0.1f);
-
+                //cam.transform.position = Vector3.MoveTowards(cam.transform.position, camOldPos, 0.1f);
+                
             }
 
             

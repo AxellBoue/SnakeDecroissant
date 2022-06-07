@@ -16,7 +16,7 @@ public class GameHandle : MonoBehaviour
         snakeSpriteRender.sprite = GameAssets.instance.snakeHeadSprite;
         snakeHeadGameObject.transform.localScale = new Vector3(4, 4, 1);*/
 
-        lvlgrid = new LvlGrid(160,120);
+        lvlgrid = new LvlGrid(207,115);
         snake.Setup(lvlgrid,foodManager);
         lvlgrid.Setup(snake,foodManager,dangerZones);
     }

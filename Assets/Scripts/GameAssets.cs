@@ -32,6 +32,38 @@ public class GameAssets : MonoBehaviour
 	public float intensiteBleu = 1.6f;
 	public float vitesseBleu = 150;
 
+
+	public void Start()
+	{
+		StopCligno();
+	}
+
+	public void StopCligno()
+    {
+
+		matClignotte.SetFloat("_ClignotteRatio", 0);
+		matClignotte.SetColor("_ClignotteColor", rouge);
+		matClignotte.SetFloat("_ClignotteSpeed", vitesseRouge);
+	}
+	public void ClignotteDead()
+	{
+		Debug.Log("Bleu");
+		matClignotte.SetColor("_ClignotteColor", bleu);
+		matClignotte.SetFloat("_ClignotteRatio", intensiteBleu);
+		matClignotte.SetFloat("_ClignotteSpeed", vitesseBleu);
+
+
+	}
+
+	public void ClignotteMilit()
+	{
+		Debug.Log("Rouge");
+		matClignotte.SetColor("_ClignotteColor", rouge);
+		matClignotte.SetFloat("_ClignotteRatio", intensiteRouge);
+		matClignotte.SetFloat("_ClignotteSpeed", vitesseRouge);
+
+
+	}
 	public void popFumee(string direction,Vector3 partPos)
     {
 		if (Random.Range(0, ratioFumee) == 0)

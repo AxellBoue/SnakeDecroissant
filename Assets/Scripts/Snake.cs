@@ -20,20 +20,30 @@ public class Snake : MonoBehaviour
     public State state;
     public Vector2Int gridPosition;
     private Direction gridMoveDirection;
+
     private float gridMoveTimer;
     public float gridMoveTimerMax;
     public int gridMoveSpeed;
+
     private LvlGrid lvlgrid;
+
     public int snakeSize;
     private List<SnakeMovePosition> snakePosList;
     private List<SnakeBodypart> snakeBodList;
+
     public float decroisTimer;
     public float decroisTimerMax;
+
     public FoodManager foodManager;
+    public GameAssets gameAssets;
+
     public GameObject UIGameOver;
     public GameObject imageWin;
     public GameObject imageLose;
+
     private SpriteRenderer sr;
+
+    public SnakeHitbox hitboxScript; 
 
 
     public void Setup(LvlGrid lvlgrid, FoodManager foodManager)
@@ -60,7 +70,7 @@ public class Snake : MonoBehaviour
 
         snakePosList = new List<SnakeMovePosition>();
         snakeBodList = new List<SnakeBodypart>();
-        snakeSize = 20;
+        snakeSize = 100;
         for (int i = 0; i < snakeSize; i++)
         {
             SnakeMovePosition snakeMovPos = new SnakeMovePosition(null, gridPosition, gridMoveDirection);
@@ -72,6 +82,8 @@ public class Snake : MonoBehaviour
         }
         sr = GetComponent<SpriteRenderer>();
         state = State.Alive;
+
+
     }
 
     // Update is called once per frame
@@ -137,8 +149,10 @@ public class Snake : MonoBehaviour
             snakeBodList.RemoveAt(snakeBodList.Count - 1);
             snakePosList.RemoveAt(snakePosList.Count - 1);
             snakeSize--;
+            hitboxScript.ZoomCamera();
         }
     }
+
     private void GridMovement()
     {
 
@@ -255,10 +269,13 @@ public class Snake : MonoBehaviour
     }
     IEnumerator GameOver()
     {
+        if(!UIGameOver.active)
+            GameAssets.instance.ClignotteDead();
         //Debug.Log("Fin !");
         yield return new WaitForSeconds(2f);
         imageLose.SetActive(true);
         UIGameOver.SetActive(true);
+        GameAssets.instance.StopCligno();
     }
 
     private class SnakeBodypart
@@ -278,6 +295,7 @@ public class Snake : MonoBehaviour
             }
             prevNum = num; 
             bodypart.GetComponent<SpriteRenderer>().sprite = GameAssets.instance.snakeBodySprite[num];
+            bodypart.GetComponent<SpriteRenderer>().material = GameAssets.instance.matClignotte;
             bodypart.GetComponent<SpriteRenderer>().sortingOrder = -bodyIndex;
             bodypart.transform.localScale = new Vector3(1, 1, 1);
             transform = bodypart.transform;
