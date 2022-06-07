@@ -23,6 +23,14 @@ public class GameAssets : MonoBehaviour
 	public int ratioFumee = 10;
 	public GameObject PetrolePrefab;
 	public int ratioPetrole = 10;
+	// clignotter
+	public Material matClignotte;
+	public Color rouge;
+	public float intensiteRouge = 0.5f;
+	public float vitesseRouge = 100;
+	public Color bleu;
+	public float intensiteBleu = 1.6f;
+	public float vitesseBleu = 150;
 
 	public void popFumee(string direction,Vector3 partPos)
     {
