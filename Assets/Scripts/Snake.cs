@@ -127,11 +127,13 @@ public class Snake : MonoBehaviour
         decroisTimer += Time.deltaTime;
         if (decroisTimer >= decroisTimerMax)
         {
-            Debug.Log("Oh no");
+            //Debug.Log("Oh no");
             decroisTimer -= decroisTimerMax;
             snakeBodList[snakeBodList.Count - 1].detach = true;
             snakeBodList[snakeBodList.Count - 1].bodypart.GetComponent<SegmentPerdu>().detach = true;
-            snakeBodList[snakeBodList.Count - 1].bodypart.GetComponent<SegmentPerdu>().target = foodManager.SetTargetBody();
+            Transform target = foodManager.SetTargetBody();
+            snakeBodList[snakeBodList.Count - 1].bodypart.GetComponent<SegmentPerdu>().target = target;
+            snakeBodList[snakeBodList.Count - 1].bodypart.GetComponent<SegmentPerdu>().targetPos = target.transform.position;
             snakeBodList.RemoveAt(snakeBodList.Count - 1);
             snakePosList.RemoveAt(snakePosList.Count - 1);
             snakeSize--;
