@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4515652605836514203}
   - component: {fileID: 5318056368260648002}
+  - component: {fileID: 7261124485133565494}
   m_Layer: 0
   m_Name: ZoneTexte
   m_TagString: Untagged
@@ -44,3 +45,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da6b592ad3fc7ff4fa5a8cbfd4130237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textes:
+  - 's fqsr gqs fqsrgqsd '
+  - qs efqsef qsef qs
+  - q sefqsef qsef qsf qsef qsef qesf q
+--- !u!60 &7261124485133565494
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3371948117741826670}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 4.2556744, y: 6.0312576}
+      - {x: -0.3178711, y: 7.5163093}
+      - {x: -4.7842712, y: 5.926322}
+      - {x: -7.6263, y: 3.2493026}
+      - {x: -8.123756, y: -0.12391901}
+      - {x: -7.3424964, y: -3.510901}
+      - {x: -4.9140434, y: -6.163874}
+      - {x: -0.9220946, y: -7.1663914}
+      - {x: 2.7621365, y: -7.07704}
+      - {x: 5.729801, y: -4.7914686}
+      - {x: 7.1559353, y: -1.0585198}
+      - {x: 6.5137568, y: 2.8519669}
