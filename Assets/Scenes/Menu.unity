@@ -499,7 +499,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 643, y: -409}
+  m_AnchoredPosition: {x: 448, y: -409}
   m_SizeDelta: {x: 502, y: 166}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &806168852
@@ -809,6 +809,13 @@ MonoBehaviour:
   ratioFumee: 10
   PetrolePrefab: {fileID: 0}
   ratioPetrole: 10
+  matClignotte: {fileID: 0}
+  rouge: {r: 0, g: 0, b: 0, a: 0}
+  intensiteRouge: 0.5
+  vitesseRouge: 100
+  bleu: {r: 0, g: 0, b: 0, a: 0}
+  intensiteBleu: 1.6
+  vitesseBleu: 150
 --- !u!1 &1528293800
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,7 +885,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -409}
+  m_AnchoredPosition: {x: -453, y: -409}
   m_SizeDelta: {x: 502, y: 166}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1566340256
@@ -1033,7 +1040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1820744463
 RectTransform:
   m_ObjectHideFlags: 0

@@ -411,7 +411,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 606273013}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a81317160abebf42934f277832fb027, type: 3}
   m_Name: 
@@ -630,7 +630,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1079749187
 Transform:
   m_ObjectHideFlags: 0
@@ -676,6 +676,13 @@ MonoBehaviour:
   ratioFumee: 10
   PetrolePrefab: {fileID: 0}
   ratioPetrole: 10
+  matClignotte: {fileID: 0}
+  rouge: {r: 0, g: 0, b: 0, a: 0}
+  intensiteRouge: 0.5
+  vitesseRouge: 100
+  bleu: {r: 0, g: 0, b: 0, a: 0}
+  intensiteBleu: 1.6
+  vitesseBleu: 150
 --- !u!1 &1411437840
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,7 +882,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
