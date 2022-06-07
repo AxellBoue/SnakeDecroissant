@@ -22,9 +22,14 @@ public class GreenWash : MonoBehaviour
 
     public void ActivationMilitantisme()
     {
+        int index;
+        Vector2Int posMilitant = new Vector2Int((int)zoneMilitante.transform.position.x, (int)zoneMilitante.transform.position.y);
         zoneMilitante.SetActive(true);
-        foodManager.ItemList.Remove(this.gameObject);
+        index = foodManager.ItemList.IndexOf(this.gameObject);
+        foodManager.ItemList.RemoveAt(index);
+        foodManager.ItemPos.RemoveAt(index);
         foodManager.ItemList.Add(zoneMilitante);
+        foodManager.ItemPos.Add(posMilitant);
         Destroy(gameObject);
 
     }

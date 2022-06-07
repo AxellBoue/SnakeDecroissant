@@ -92,8 +92,7 @@ public class Snake : MonoBehaviour
                 Decroissance();
                 break;
             case State.Dead:
-                imageLose.SetActive(true);
-                UIGameOver.SetActive(true);
+                StartCoroutine("GameOver");
                 break;
 
         }
@@ -252,6 +251,13 @@ public class Snake : MonoBehaviour
         }
         return gridPosList;
     }
+    IEnumerator GameOver()
+    {
+        //Debug.Log("Fin !");
+        yield return new WaitForSeconds(2f);
+        imageLose.SetActive(true);
+        UIGameOver.SetActive(true);
+    }
 
     private class SnakeBodypart
     {
@@ -277,6 +283,8 @@ public class Snake : MonoBehaviour
             detach = false;
 
         }
+
+       
         void Update()
         {
         }

@@ -51,7 +51,7 @@ public class SnakeHitbox : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("Stay");
+        //Debug.Log("Stay");
 
         if (collision.gameObject.tag == "Militant" && snake.gridMoveTimerMax > 0.05f)
         {

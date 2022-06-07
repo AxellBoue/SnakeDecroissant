@@ -107,18 +107,19 @@ public class LvlGrid : MonoBehaviour
                     indexDangerZones++;
                     snake.snakeSize ++;
                     snake.CreateSnakeBod();                   
-                    snake.decroisTimer = 5f;
+                    snake.decroisTimer = snake.decroisTimerMax;
                 }
                 else if (foodManager.ItemList[i].GetComponent<Food>().type == Food.ItemType.Militant)
                 {
                     dangerZones[indexDangerZones].gameObject.SetActive(true);
+                    dangerZones[indexDangerZones].gameObject.GetComponent<DangerAppear>().Appear();
                     indexDangerZones++;
-                    snake.decroisTimer = 5f;
+                    snake.decroisTimer = snake.decroisTimerMax;
                 }
                 Object.Destroy(foodManager.ItemList[i]);
                 Debug.Log("Nomed nomed");
                 //SpawnFood();
-                //foodManager.ItemPos.RemoveAt(i);
+                foodManager.ItemPos.RemoveAt(i);
                 foodManager.ItemList.RemoveAt(i);
             }
             else

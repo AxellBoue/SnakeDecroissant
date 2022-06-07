@@ -163,7 +163,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 241848350}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &241848353
 Camera:
   m_ObjectHideFlags: 0
@@ -664,10 +664,18 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   foodSprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  AngleDB: {fileID: 0}
-  AngleDH: {fileID: 0}
-  AngleGB: {fileID: 0}
-  AngleGH: {fileID: 0}
+  AngleDB:
+  - {fileID: 0}
+  AngleDH:
+  - {fileID: 0}
+  AngleGB:
+  - {fileID: 0}
+  AngleGH:
+  - {fileID: 0}
+  FumeePrefab: {fileID: 0}
+  ratioFumee: 10
+  PetrolePrefab: {fileID: 0}
+  ratioPetrole: 10
 --- !u!1 &1411437840
 GameObject:
   m_ObjectHideFlags: 0

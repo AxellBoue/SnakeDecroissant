@@ -163,7 +163,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 241848350}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &241848353
 Camera:
   m_ObjectHideFlags: 0
@@ -411,7 +411,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 606273013}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a81317160abebf42934f277832fb027, type: 3}
   m_Name: 
@@ -763,7 +763,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1079749187
 Transform:
   m_ObjectHideFlags: 0
@@ -797,10 +797,18 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   foodSprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  AngleDB: {fileID: 0}
-  AngleDH: {fileID: 0}
-  AngleGB: {fileID: 0}
-  AngleGH: {fileID: 0}
+  AngleDB:
+  - {fileID: 0}
+  AngleDH:
+  - {fileID: 0}
+  AngleGB:
+  - {fileID: 0}
+  AngleGH:
+  - {fileID: 0}
+  FumeePrefab: {fileID: 0}
+  ratioFumee: 10
+  PetrolePrefab: {fileID: 0}
+  ratioPetrole: 10
 --- !u!1 &1528293800
 GameObject:
   m_ObjectHideFlags: 0
