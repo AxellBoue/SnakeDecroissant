@@ -8,10 +8,18 @@ public class FollowTarget : MonoBehaviour
     private Camera cam;
     Vector2 cameraSize;
     public bool inMove;
+    // pour smooth le mouvement
+    private Vector3 targetPos;
+    private Vector3 direction;
+    public float vitesseNormale = 0.1f;
+    public float vitesseInZoom = 0.1f;
+    private float vitesse;
+
     // zoom décroissance
     private bool isZoom = false;
     private float zoomDestination;
     public float vitesseZoom = 5f;
+    public float distanceBouge = 0.2f;
     // zoom final
     private bool isZoomFinal = false;
     private float zoomDeLaFin;
@@ -25,6 +33,7 @@ public class FollowTarget : MonoBehaviour
         bounds = GameObject.Find("CameraBounds").GetComponent<BoxCollider2D>();
         cam = GetComponent<Camera>();
         zoomDestination = cam.orthographicSize;
+        vitesse = vitesseNormale;
     }
 
     // Update is called once per frame
@@ -39,6 +48,7 @@ public class FollowTarget : MonoBehaviour
             else
             {
                 isZoom = false;
+                vitesse = vitesseNormale;
             }
         }
         if (isZoomFinal)
@@ -51,8 +61,16 @@ public class FollowTarget : MonoBehaviour
             }
         }
         cameraSize = new Vector2(cam.orthographicSize * Screen.width / Screen.height, cam.orthographicSize);
-        transform.position = new Vector3(Mathf.Clamp(target.position.x, bounds.bounds.min.x + cameraSize.x, bounds.bounds.max.x - cameraSize.x), Mathf.Clamp(target.position.y, bounds.bounds.min.y + cameraSize.y, bounds.bounds.max.y - cameraSize.y), transform.position.z);
-        
+        targetPos = new Vector3(Mathf.Clamp(target.position.x, bounds.bounds.min.x + cameraSize.x, bounds.bounds.max.x - cameraSize.x), Mathf.Clamp(target.position.y, bounds.bounds.min.y + cameraSize.y, bounds.bounds.max.y - cameraSize.y), transform.position.z);
+        print(targetPos);
+        if (Vector3.Distance(transform.position, targetPos) > distanceBouge)
+        {
+            direction = (targetPos - transform.position).normalized;
+            transform.position += direction * vitesse;
+            print("moove");
+        }
+        //transform.position = new Vector3(Mathf.Clamp(target.position.x, bounds.bounds.min.x + cameraSize.x, bounds.bounds.max.x - cameraSize.x), Mathf.Clamp(target.position.y, bounds.bounds.min.y + cameraSize.y, bounds.bounds.max.y - cameraSize.y), transform.position.z);
+
     }
 
 
@@ -60,6 +78,7 @@ public class FollowTarget : MonoBehaviour
     {
         zoomDestination += zoomToAdd;
         isZoom = true;
+        vitesse = vitesseInZoom;
     }
 
     public void zoomFinal()

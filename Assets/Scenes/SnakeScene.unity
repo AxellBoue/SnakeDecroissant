@@ -519,7 +519,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   inMove: 0
+  vitesseNormale: 0.2
+  vitesseInZoom: 0.1
   vitesseZoom: 0.3
+  distanceBouge: 5
   vitesseZoomFinal: 0.2
 --- !u!1001 &527280856
 PrefabInstance:
