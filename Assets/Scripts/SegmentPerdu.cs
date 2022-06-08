@@ -7,6 +7,7 @@ public class SegmentPerdu : MonoBehaviour
     public bool detach;
     public Transform target;
     public Vector3 targetPos;
+    public FoodManager foodManager;
 
     // Start is called before the first frame update
     void Start()
@@ -31,11 +32,11 @@ public class SegmentPerdu : MonoBehaviour
             {
                 Destroy(gameObject);
             }
-            else if(transform.position == targetPos && target == null)
-            {
-                Destroy(gameObject);
-
-            }
+            
+        }
+        else if (target == null)
+        {
+            target = foodManager.SetTargetBody();
         }
     }
     public void detacher() {

@@ -71,7 +71,7 @@ public class Snake : MonoBehaviour
 
         snakePosList = new List<SnakeMovePosition>();
         snakeBodList = new List<SnakeBodypart>();
-        snakeSize = 100;
+        snakeSize = 70;
         for (int i = 0; i < snakeSize; i++)
         {
             SnakeMovePosition snakeMovPos = new SnakeMovePosition(null, gridPosition, gridMoveDirection);
@@ -146,6 +146,7 @@ public class Snake : MonoBehaviour
             snakeBodList[snakeBodList.Count - 1].detach = true;
             snakeBodList[snakeBodList.Count - 1].bodypart.GetComponent<SegmentPerdu>().detacher();
             Transform target = foodManager.SetTargetBody();
+            snakeBodList[snakeBodList.Count - 1].bodypart.GetComponent<SegmentPerdu>().foodManager = this.foodManager;
             snakeBodList[snakeBodList.Count - 1].bodypart.GetComponent<SegmentPerdu>().target = target;
             snakeBodList[snakeBodList.Count - 1].bodypart.GetComponent<SegmentPerdu>().targetPos = target.transform.position;
             snakeBodList.RemoveAt(snakeBodList.Count - 1);
