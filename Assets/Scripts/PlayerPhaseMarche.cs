@@ -8,7 +8,7 @@ public class PlayerPhaseMarche : MonoBehaviour
     float inputX;
     float inputY;
     Rigidbody2D rb;
-    float vitesse = 8;
+    float vitesse = 12;
     public bool canMove = true;
 
     // Start is called before the first frame update

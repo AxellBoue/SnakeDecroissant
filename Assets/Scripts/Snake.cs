@@ -15,7 +15,8 @@ public class Snake : MonoBehaviour
     public enum State
     {
         Alive,
-        Dead
+        Dead,
+        Win
     }
     public State state;
     public Vector2Int gridPosition;
@@ -89,11 +90,12 @@ public class Snake : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (snakeSize <= 0)
+        if (snakeSize <= 0 && state != State.Win)
         {
-            state = State.Dead;
-            imageWin.SetActive(true);
-
+            //state = State.Dead;
+            //imageWin.SetActive(true);
+            state = State.Win;
+            PhaseMarcheManager.instance.demarrePhaseMarche(transform.position+new Vector3(3,0,0));
         }
 
         switch (state)

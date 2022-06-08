@@ -19,7 +19,7 @@ public class PhaseMarcheManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        demarrePhaseMarche(new Vector3(0, 0, 0));
+        //demarrePhaseMarche(new Vector3(0, 0, 0));
     }
 
     // Start is called before the first frame update
@@ -50,7 +50,8 @@ public class PhaseMarcheManager : MonoBehaviour
         {
             tr.gameObject.GetComponent<Collider2D>().isTrigger = false;
         }
-        // activer les zones de coll du texte ? ou elles y sont des le début ?
+        GameObject.FindObjectOfType<FollowTarget>().target = player.transform;
+        GameObject.FindObjectOfType<FollowTarget>().zoomFinal();
     }
 
     public void demarreTexte(string[] dialogueZone)
