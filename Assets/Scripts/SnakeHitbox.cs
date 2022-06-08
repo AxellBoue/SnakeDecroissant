@@ -37,7 +37,7 @@ public class SnakeHitbox : MonoBehaviour
         {
             inMilit = true;
             snake.gridMoveTimerMax += 0.1f;
-            snake.decroisTimerMax = 0.7f;
+            snake.decroisTimerMax = 1f;
             GameAssets.instance.ClignotteMilit();
 
 
