@@ -85,6 +85,7 @@ public class FollowTarget : MonoBehaviour
     {
         zoomDepart = cam.orthographicSize;
         zoomDeLaFin = zoomDepart - 8;
-        isZoomFinal = true;
+        distanceBouge /= 2;
+        isZoomFinal = true;  
     }
 }
