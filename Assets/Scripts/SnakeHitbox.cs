@@ -91,7 +91,8 @@ public class SnakeHitbox : MonoBehaviour
 
         if (cam.orthographicSize >= 40f)
         {
-            cam.orthographicSize -= 0.5f;
+            cam.gameObject.GetComponent<FollowTarget>().startZoom(-0.5f);  
+           // cam.orthographicSize -= 0.5f;
         }
 
     }

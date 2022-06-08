@@ -520,6 +520,7 @@ MonoBehaviour:
   target: {fileID: 0}
   inMove: 0
   vitesseZoom: 0.3
+  vitesseZoomFinal: 0.2
 --- !u!1001 &527280856
 PrefabInstance:
   m_ObjectHideFlags: 0
