@@ -682,6 +682,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[0]
+      value: "Il nous faut lutter contre tous les syst\xE8mes d'oppressions."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[1]
+      value: Personne n'est vraiment libre tant que tout le monde ne l'est pas.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[2]
+      value: "Toutes les luttes sont li\xE9es et les syst\xE8mes de discrimination
+        se renforcent mutuellement."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[3]
+      value: "Lutter contre les autres oppressions n'est pas diviser la lutte, c'est
+        au contraire arr\xEAter d'en exclure les personnes d\xE9j\xE0 marginalis\xE9es."
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
 --- !u!4 &5563505859907268712 stripped

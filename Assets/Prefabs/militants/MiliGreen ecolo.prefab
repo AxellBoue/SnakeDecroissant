@@ -690,6 +690,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[0]
+      value: " Si l'on veut prot\xE9ger l'environnement, il faut que la nature deviennent
+        un bien public."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[1]
+      value: "Il faut repenser l'espace urbain et l'usage des voitures. Les pi\xE9tons
+        comme les transports en communs devraient \xEAtre une priorit\xE9 pour nos
+        collectivit\xE9s."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[2]
+      value: "Une alimentation plus \xE9thique et la plus v\xE9g\xE9tale possible
+        est n\xE9cessaire et il nous faut sortir de la production massive et violente
+        des lobbys agroalimentaires."
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
 --- !u!4 &3515780085594310781 stripped

@@ -682,6 +682,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[0]
+      value: "Privil\xE9gier et tester de nouveaux syst\xE8me de vies sont n\xE9cessaires
+        pour transformer la soci\xE9t\xE9."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[1]
+      value: "Se r\xE9approprier l'espace comme sur les ZAD est un premier pas vers
+        la pr\xE9servation du monde."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[2]
+      value: Des circuits cours et locaux, la permaculture sont des moyens alternatifs
+        pour proposer une production plus saine.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[3]
+      value: "Cela permet de construire des syst\xE8mes substitutifs permettant une
+        meilleure r\xE9partition des richesses et une viabilit\xE9 \xE9cologique."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[4]
+      value: "Commen\xE7ons \xE0 construire nos utopies d\xE8s maintenant et nourrissons
+        celles qui existent d\xE9j\xE0."
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
 --- !u!4 &6405646052466718013 stripped

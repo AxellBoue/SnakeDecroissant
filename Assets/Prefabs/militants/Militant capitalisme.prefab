@@ -597,6 +597,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[0]
+      value: "Une \xE9cologie capitaliste va droit dans le mur. Le syst\xE8me actuel
+        ne peut \xEAtre compatible avec une quelconque vision de l'\xE9cologie."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[1]
+      value: "Un syst\xE8me qui repose sur la surconsommation et la croissance permanente
+        ne peut \xEAtre viable."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[2]
+      value: "La focalisation de toute la soci\xE9t\xE9 sur l'\xE9conomie est invivable,
+        d'autant plus que les richesse sont accapar\xE9es par un minimum de personne."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[3]
+      value: "Ce n'est pas la surpopulation le probl\xE8me mais la surconsommation
+        et la surproduction. Les pays \"riches\" et les riches consomment bien plus
+        que les autres pays et les populations pauvres.  "
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
 --- !u!4 &5483490334033790596 stripped

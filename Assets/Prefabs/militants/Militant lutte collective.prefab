@@ -682,6 +682,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[0]
+      value: "La d\xE9croissance ne s'obtiendra pas en la demandant gentiment, il
+        faut et faudra lutter."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[1]
+      value: "La lutte est partout, dans la rue, via des rapports de forces, et dans
+        les urnes, mais ces derni\xE8res ne feront pas tout."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[2]
+      value: "Un Macron a r\xE9ussi \xE0 \xEAtre r\xE9\xE9lu malgr\xE9 les rapports
+        du GIEC."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[3]
+      value: "M\xE9lanchon est un d\xE9but de solution, mais cela ne doit pas nous
+        emp\xEAcher d'\xEAtre vigilant et de continuer \xE0 lutter !"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[4]
+      value: "Le combat ne s'arr\xEAte pas non plus \xE0 nos fronti\xE8re, et c'est
+        ensemble qu'il faut lutter contre l'influence n\xE9faste des lobbies et des
+        multinationales."
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
 --- !u!4 &589962745256719475 stripped

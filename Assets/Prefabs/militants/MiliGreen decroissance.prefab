@@ -682,6 +682,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[0]
+      value: "Recouvrir toute la surface de la terre d'\xE9oliennes et de panneaux
+        solaire n'est pas la solution."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[1]
+      value: "Il faut surtout diminuer la quantit\xE9 d'\xE9nergie que l'on consomme."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[2]
+      value: "Aucune technologie miraculeuse d'\xE9nergie verte ne verra le jour
+        \xE0 temps, avec le niveau de consommation et de production actuel des pays
+        \"riches\"."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[3]
+      value: "D\xE9velopper les \xE9nergies renouvelables est n\xE9cessaire, mais
+        ne doit pas \xEAtre la seule solution."
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
 --- !u!4 &3772199301010541036 stripped

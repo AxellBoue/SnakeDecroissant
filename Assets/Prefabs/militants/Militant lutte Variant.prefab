@@ -483,6 +483,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[0]
+      value: "Il faut m\xE9tamorphoser nos conceptions des pays et des industries."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[1]
+      value: "Changer individuellement est n\xE9cessaire, mais seul\xB7e, notre impact
+        sera minime et l'\xE9nergie que l'on d\xE9pense pour le faire sera \xE9puisante."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318056368260648002, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
+      propertyPath: textes.Array.data[2]
+      value: "Il faut que les collectivit\xE9s, les associations et que les instances
+        populaires poussent les \xE9tats, les multinationales, les instances de d\xE9cision
+        internationales \xE0 changer"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c02fad9e772861e4fb31d72db7be628f, type: 3}
 --- !u!1001 &6703566792688657804
@@ -530,7 +545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5608681310064241298, guid: 7d6524f7d6a65624c9fcea89c8e44c29, type: 3}
       propertyPath: m_Name
-      value: Militant lutte
+      value: Militant lutte Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5608681310064241299, guid: 7d6524f7d6a65624c9fcea89c8e44c29, type: 3}
       propertyPath: m_RootOrder
