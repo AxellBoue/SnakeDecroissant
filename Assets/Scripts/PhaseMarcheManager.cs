@@ -45,6 +45,11 @@ public class PhaseMarcheManager : MonoBehaviour
         NewPlayer.transform.position = pos;
         player = NewPlayer.GetComponent<PlayerPhaseMarche>();
         // ajouter que ça met les zones de collisions des zones destroy en pas trigger pour pas qu'on puisse aller dessus)
+        GameHandle GH = GameObject.FindObjectOfType<GameHandle>();
+        foreach(Transform tr in GH.dangerZones)
+        {
+            tr.gameObject.GetComponent<Collider2D>().isTrigger = false;
+        }
         // activer les zones de coll du texte ? ou elles y sont des le début ?
     }
 
