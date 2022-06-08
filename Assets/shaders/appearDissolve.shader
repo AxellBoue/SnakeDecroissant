@@ -1,11 +1,10 @@
-Shader "Sprites/clignotte"
+Shader "Sprites/appearDissolve"
 {
 	Properties{
 		_Color("Tint", Color) = (0, 0, 0, 1)
 		_MainTex("Texture", 2D) = "white" {}
-		_ClignotteRatio("Clignotte", float) = 0
-		_ClignotteColor("ClignotteColor", Color) = (0, 0, 0, 1)
-		_ClignotteSpeed("ClignotteSpeed", float) = 100
+		_Intensity("Intensite", float) = 0
+		_NoiseTex("Noise Texture", 2D) = "white" {}
 	}
 
 		SubShader{
@@ -34,9 +33,9 @@ Shader "Sprites/clignotte"
 
 				fixed4 _Color;
 				
-				fixed4 _ClignotteColor;
-				float _ClignotteRatio;
-				float _ClignotteSpeed;
+				float _Intensity;
+				sampler2D _NoiseTex;
+
 
 				struct appdata {
 					float4 vertex : POSITION;
@@ -60,9 +59,11 @@ Shader "Sprites/clignotte"
 
 				fixed4 frag(v2f i) : SV_TARGET{
 					fixed4 col = tex2D(_MainTex, i.uv);
-					//col *= _Color;
+					col *= _Color;
 					col *= i.color;
-					col.rgb = lerp(col.rgb, _ClignotteColor.rgb, ( cos( _Time.x * _ClignotteSpeed ) + 1 ) / 2 *_ClignotteRatio); 
+					fixed4 noise = tex2D(_NoiseTex, i.uv);
+					//col.a = saturate(noise.r + _Intensity);
+					col.a = step(_Intensity, noise.r);
 					return col;
 				}
 
