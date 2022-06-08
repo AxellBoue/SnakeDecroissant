@@ -9,6 +9,7 @@ public class ColoPersoDissolve : MonoBehaviour
     public float coloAnim = 0;
     private SpriteRenderer srParent;
     private SpriteRenderer sr;
+    private float a;
     
     void Start()
     {
@@ -19,6 +20,7 @@ public class ColoPersoDissolve : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        sr.color = new Color(1, 1, 1, srParent.color.a * coloAnim);
+        a = Mathf.Clamp(srParent.color.a + coloAnim, 0, 1);
+        sr.color = new Color(1, 1, 1,a );
     }
 }
