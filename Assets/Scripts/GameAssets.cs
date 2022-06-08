@@ -31,7 +31,8 @@ public class GameAssets : MonoBehaviour
 	public Color bleu;
 	public float intensiteBleu = 1.6f;
 	public float vitesseBleu = 150;
-
+	//dissolve
+	public GameObject snakeDissolve;
 
 	public void Start()
 	{

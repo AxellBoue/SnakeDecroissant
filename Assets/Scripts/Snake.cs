@@ -142,7 +142,7 @@ public class Snake : MonoBehaviour
             //Debug.Log("Oh no");
             decroisTimer -= decroisTimerMax;
             snakeBodList[snakeBodList.Count - 1].detach = true;
-            snakeBodList[snakeBodList.Count - 1].bodypart.GetComponent<SegmentPerdu>().detach = true;
+            snakeBodList[snakeBodList.Count - 1].bodypart.GetComponent<SegmentPerdu>().detacher();
             Transform target = foodManager.SetTargetBody();
             snakeBodList[snakeBodList.Count - 1].bodypart.GetComponent<SegmentPerdu>().target = target;
             snakeBodList[snakeBodList.Count - 1].bodypart.GetComponent<SegmentPerdu>().targetPos = target.transform.position;

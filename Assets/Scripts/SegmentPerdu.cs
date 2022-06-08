@@ -19,7 +19,7 @@ public class SegmentPerdu : MonoBehaviour
     {
         if (detach && target && transform.position != target.transform.position)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, 0.2f);
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, 0.1f);
 
             if(transform.position == targetPos && target.tag == "GreenWash")
             {
@@ -38,4 +38,14 @@ public class SegmentPerdu : MonoBehaviour
             }
         }
     }
+    public void detacher() {
+        detach = true;
+        GetComponent<SpriteRenderer>().enabled = false;
+        GameObject newDisolve = Instantiate(GameAssets.instance.snakeDissolve, this.transform);
+        newDisolve.transform.localPosition = Vector3.zero;
+        // change rotations 
+        newDisolve.transform.GetChild(1).Rotate(-transform.rotation.eulerAngles);
+        newDisolve.transform.GetChild(2).Rotate(-transform.rotation.eulerAngles);
+    }
+
 }
