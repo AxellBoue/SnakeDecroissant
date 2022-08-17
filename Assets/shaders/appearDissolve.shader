@@ -3,8 +3,8 @@ Shader "Sprites/appearDissolve"
 	Properties{
 		_Color("Tint", Color) = (0, 0, 0, 1)
 		_MainTex("Texture", 2D) = "white" {}
-		_Intensity("Intensite", float) = 0
 		_NoiseTex("Noise Texture", 2D) = "white" {}
+		// intensity = color.a
 	}
 
 		SubShader{
@@ -33,7 +33,6 @@ Shader "Sprites/appearDissolve"
 
 				fixed4 _Color;
 				
-				float _Intensity;
 				sampler2D _NoiseTex;
 
 
@@ -60,10 +59,10 @@ Shader "Sprites/appearDissolve"
 				fixed4 frag(v2f i) : SV_TARGET{
 					fixed4 col = tex2D(_MainTex, i.uv);
 					col *= _Color;
-					col *= i.color;
+					col.rgb *= i.color.rgb;
 					fixed4 noise = tex2D(_NoiseTex, i.uv);
-					//col.a = saturate(noise.r + _Intensity);
-					col.a = step(_Intensity, noise.r);
+					//col.a = saturate(noise.r + 1-i.color.a);
+					col.a = step(1-i.color.a, noise.r);
 					return col;
 				}
 
