@@ -50,6 +50,8 @@ public class PhaseMarcheManager : MonoBehaviour
         {
             tr.gameObject.GetComponent<Collider2D>().isTrigger = false;
         }
+        // passe camera en follow player
+        print("caamera target = player");
         GameObject.FindObjectOfType<FollowTarget>().target = player.transform;
         GameObject.FindObjectOfType<FollowTarget>().zoomFinal();
     }

@@ -62,12 +62,12 @@ public class FollowTarget : MonoBehaviour
         }
         cameraSize = new Vector2(cam.orthographicSize * Screen.width / Screen.height, cam.orthographicSize);
         targetPos = new Vector3(Mathf.Clamp(target.position.x, bounds.bounds.min.x + cameraSize.x, bounds.bounds.max.x - cameraSize.x), Mathf.Clamp(target.position.y, bounds.bounds.min.y + cameraSize.y, bounds.bounds.max.y - cameraSize.y), transform.position.z);
-        print(targetPos);
+        //print(targetPos);
         if (Vector3.Distance(transform.position, targetPos) > distanceBouge)
         {
             direction = (targetPos - transform.position).normalized;
             transform.position += direction * vitesse;
-            print("moove");
+            //print("moove");
         }
         //transform.position = new Vector3(Mathf.Clamp(target.position.x, bounds.bounds.min.x + cameraSize.x, bounds.bounds.max.x - cameraSize.x), Mathf.Clamp(target.position.y, bounds.bounds.min.y + cameraSize.y, bounds.bounds.max.y - cameraSize.y), transform.position.z);
 
@@ -83,6 +83,7 @@ public class FollowTarget : MonoBehaviour
 
     public void zoomFinal()
     {
+        print("zoom final");
         zoomDepart = cam.orthographicSize;
         zoomDeLaFin = zoomDepart - 8;
         distanceBouge /= 2;

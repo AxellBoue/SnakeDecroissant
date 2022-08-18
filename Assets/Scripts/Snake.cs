@@ -5,7 +5,7 @@ using UnityEngine;
 public class Snake : MonoBehaviour
 {
 
-    private enum Direction
+    public enum Direction
     {
         Left,
         Right,
@@ -44,8 +44,10 @@ public class Snake : MonoBehaviour
 
     private SpriteRenderer sr;
 
-    public SnakeHitbox hitboxScript; 
+    public SnakeHitbox hitboxScript;
 
+    public Direction[] InitialCreationDirections;
+    public int[] InitialLongueurParDirection;
 
     public void Setup(LvlGrid lvlgrid, FoodManager foodManager)
     {
@@ -56,9 +58,10 @@ public class Snake : MonoBehaviour
     void Awake()
     {
 
-        gridPosition = new Vector2Int(0, 0);
+        //gridPosition = new Vector2Int(0, 0);
+        gridPosition = new Vector2Int((int)transform.position.x, (int)transform.position.y);
         gridMoveSpeed = 3;
-        gridMoveDirection = Direction.Right;
+        gridMoveDirection = Direction.Down;
         gridMoveTimerMax = 0.2f;
         gridMoveTimer = gridMoveTimerMax;
 
@@ -71,7 +74,7 @@ public class Snake : MonoBehaviour
 
         snakePosList = new List<SnakeMovePosition>();
         snakeBodList = new List<SnakeBodypart>();
-        snakeSize = 70;
+        //snakeSize = 70;
         for (int i = 0; i < snakeSize; i++)
         {
             SnakeMovePosition snakeMovPos = new SnakeMovePosition(null, gridPosition, gridMoveDirection);
@@ -84,7 +87,7 @@ public class Snake : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         state = State.Alive;
 
-
+        StartCoroutine("CreationSnakeDebut"); 
     }
 
     // Update is called once per frame
@@ -110,6 +113,34 @@ public class Snake : MonoBehaviour
                 break;
 
         }
+    }
+
+    IEnumerator CreationSnakeDebut()
+    {
+        yield return new WaitForEndOfFrame();
+
+        int iDir = 0;
+        int iLongueur = 0;
+        int i = 0;
+
+        while (i < snakeSize)
+        {
+            for (int j = 0; j < InitialLongueurParDirection[iLongueur]; j++)
+            {
+                gridMoveDirection = InitialCreationDirections[iDir];
+                GridMovement(true);
+                i += 1;
+            }
+            if (iDir < InitialCreationDirections.Length - 1)
+            {
+                iDir += 1;
+            }
+            if (iLongueur < InitialLongueurParDirection.Length - 1)
+            {
+                iLongueur += 1;
+            }
+        }
+        gridMoveTimer = 0;
     }
 
     private void OnControl()
@@ -156,16 +187,18 @@ public class Snake : MonoBehaviour
         }
     }
 
-    private void GridMovement()
+    private void GridMovement(bool InitialCreation = false)
     {
 
         //Timer du pas 
         gridMoveTimer += Time.deltaTime;
 
-        if (gridMoveTimer >= gridMoveTimerMax)
+        if (gridMoveTimer >= gridMoveTimerMax || InitialCreation)
         {
-
-            gridMoveTimer -= gridMoveTimerMax;
+            if (!InitialCreation)
+            {
+                gridMoveTimer -= gridMoveTimerMax;
+            }
             SnakeMovePosition previousSnakeMovPos = null;
             if (snakePosList.Count > 0)
             {

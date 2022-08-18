@@ -12,7 +12,7 @@ public class SegmentPerdu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        foodManager = FindObjectOfType<FoodManager>();
     }
 
     // Update is called once per frame

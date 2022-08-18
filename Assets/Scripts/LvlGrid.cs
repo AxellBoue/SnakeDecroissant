@@ -103,7 +103,7 @@ public class LvlGrid : MonoBehaviour
                 if (foodManager.ItemList[i].GetComponent<Food>().type == Food.ItemType.Capitaliste)
                 {
                     dangerZones[indexDangerZones].gameObject.SetActive(true);
-                    dangerZones[indexDangerZones].gameObject.GetComponent<DangerAppear>().Appear();
+                    //dangerZones[indexDangerZones].gameObject.GetComponent<DangerAppear>().Appear();
                     indexDangerZones++;
                     snake.snakeSize ++;
                     snake.CreateSnakeBod();                   
@@ -112,7 +112,7 @@ public class LvlGrid : MonoBehaviour
                 else if (foodManager.ItemList[i].GetComponent<Food>().type == Food.ItemType.Militant)
                 {
                     dangerZones[indexDangerZones].gameObject.SetActive(true);
-                    dangerZones[indexDangerZones].gameObject.GetComponent<DangerAppear>().Appear();
+                    //dangerZones[indexDangerZones].gameObject.GetComponent<DangerAppear>().Appear();
                     indexDangerZones++;
                     snake.decroisTimer = snake.decroisTimerMax;
                 }
