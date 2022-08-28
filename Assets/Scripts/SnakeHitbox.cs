@@ -40,7 +40,7 @@ public class SnakeHitbox : MonoBehaviour
             snake.decroisTimerMax = 1f;
             GameAssets.instance.ClignotteMilit();
             collision.gameObject.GetComponent<Militant>().isSnakeClose = true;
-
+            Debug.Log("In");
 
         }
 

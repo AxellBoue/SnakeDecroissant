@@ -182,8 +182,8 @@ public class Snake : MonoBehaviour
         decroisTimer += Time.deltaTime;
         if (decroisTimer >= decroisTimerMax)
         {
-            //Debug.Log("Oh no");
-            decroisTimer -= decroisTimerMax;
+            Debug.Log("Oh no");
+            decroisTimer = 0;
             snakeBodList[snakeBodList.Count - 1].detach = true;
             snakeBodList[snakeBodList.Count - 1].bodypart.GetComponent<SegmentPerdu>().detacher();
             Transform target = foodManager.SetTargetBody();
