@@ -49,6 +49,8 @@ public class Snake : MonoBehaviour
     public Direction[] InitialCreationDirections;
     public int[] InitialLongueurParDirection;
 
+    
+
     public void Setup(LvlGrid lvlgrid, FoodManager foodManager)
     {
         this.lvlgrid = lvlgrid;
@@ -191,7 +193,10 @@ public class Snake : MonoBehaviour
             snakeBodList.RemoveAt(snakeBodList.Count - 1);
             snakePosList.RemoveAt(snakePosList.Count - 1);
             snakeSize--;
+            Vector3 chiffrePos = new Vector3(transform.position.x, transform.position.y+5, transform.position.z);
+            Instantiate(foodManager.prefabMoins1, chiffrePos, Quaternion.identity);
             hitboxScript.ZoomCamera();
+
         }
     }
 

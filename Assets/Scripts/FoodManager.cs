@@ -8,6 +8,10 @@ public class FoodManager : MonoBehaviour
     public List<GameObject> ZoneDanger;
     public List<GameObject> ItemList;
     public List<Vector2Int> ItemPos;
+    public GameObject prefab3;
+    public GameObject prefab5;
+    public GameObject prefab10;
+    public GameObject prefabMoins1;
 
     // Start is called before the first frame update
     void Awake()

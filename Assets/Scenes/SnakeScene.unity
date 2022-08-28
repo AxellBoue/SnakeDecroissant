@@ -2765,6 +2765,10 @@ MonoBehaviour:
   - {fileID: 2137187744}
   - {fileID: 276374380}
   ItemPos: []
+  prefab3: {fileID: 2932829434136865876, guid: a2698496ecaedb44e9032cc90d8b2737, type: 3}
+  prefab5: {fileID: 2068522618071042683, guid: b345835ee296f494fb2a6443706cf247, type: 3}
+  prefab10: {fileID: 1373395726532947201, guid: 0e6c47fb4142e8448a066aca9e5587e9, type: 3}
+  prefabMoins1: {fileID: 4086161195053912948, guid: 49c80af2653a68240872228fbfa87e3e, type: 3}
 --- !u!4 &859670257
 Transform:
   m_ObjectHideFlags: 0

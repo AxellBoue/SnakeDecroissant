@@ -14,6 +14,7 @@ public class LvlGrid : MonoBehaviour
     public List<Transform> dangerZones;
     public int indexDangerZones;
     public int dimensionFood=2;
+ 
 
     public LvlGrid(int w, int h)
     {
@@ -103,14 +104,17 @@ public class LvlGrid : MonoBehaviour
             if ((foodManager.ItemList[i].transform.position.y <= snakeGridPos.y + dimensionFood && foodManager.ItemList[i].transform.position.y >= snakeGridPos.y - dimensionFood)
             && (foodManager.ItemList[i].transform.position.x <= snakeGridPos.x + dimensionFood && foodManager.ItemList[i].transform.position.x >= snakeGridPos.x - dimensionFood))
             {
+                Vector3 chiffrePos = new Vector3(snake.transform.position.x, snake.transform.position.y+5, snake.transform.position.z);
+
                 if (foodManager.ItemList[i].GetComponent<Food>().type == Food.ItemType.Capitaliste)
                 {
                     dangerZones[indexDangerZones].gameObject.SetActive(true);
                     //dangerZones[indexDangerZones].gameObject.GetComponent<DangerAppear>().Appear();
                     indexDangerZones++;
                     snake.snakeSize = snake.snakeSize+10;
-                    snake.CreateSnakeBod();                   
-                    snake.decroisTimer = snake.decroisTimerMax;
+                    snake.CreateSnakeBod();
+                    Instantiate(foodManager.prefab10, chiffrePos, Quaternion.identity);
+                    snake.decroisTimer = 0;
                 }
                 else if (foodManager.ItemList[i].GetComponent<Food>().type == Food.ItemType.Militant)
                 {
@@ -119,7 +123,8 @@ public class LvlGrid : MonoBehaviour
                     indexDangerZones++;
                     snake.snakeSize = snake.snakeSize + 3;
                     snake.CreateSnakeBod();
-                    snake.decroisTimer = snake.decroisTimerMax;
+                    Instantiate(foodManager.prefab3, chiffrePos, Quaternion.identity);
+                    snake.decroisTimer = 0;
                 }
                 else if (foodManager.ItemList[i].GetComponent<Food>().type == Food.ItemType.GreenWash)
                 {
@@ -128,7 +133,8 @@ public class LvlGrid : MonoBehaviour
                     indexDangerZones++;
                     snake.snakeSize = snake.snakeSize + 5;
                     snake.CreateSnakeBod();
-                    snake.decroisTimer = snake.decroisTimerMax;
+                    Instantiate(foodManager.prefab5, chiffrePos, Quaternion.identity);
+                    snake.decroisTimer = 0;
                 }
 
                 Object.Destroy(foodManager.ItemList[i]);

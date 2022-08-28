@@ -32,7 +32,7 @@ public class SnakeHitbox : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("In");
+        //Debug.Log("In");
         if(collision.gameObject.tag == "Militant")
         {
             inMilit = true;
@@ -55,7 +55,7 @@ public class SnakeHitbox : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("Out");
+        //Debug.Log("Out");
 
         if (collision.gameObject.tag == "Militant")
         {
