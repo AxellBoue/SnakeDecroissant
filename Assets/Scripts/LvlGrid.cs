@@ -13,6 +13,7 @@ public class LvlGrid : MonoBehaviour
     private FoodManager foodManager;
     public List<Transform> dangerZones;
     public int indexDangerZones;
+    public int dimensionFood=2;
 
     public LvlGrid(int w, int h)
     {
@@ -32,7 +33,7 @@ public class LvlGrid : MonoBehaviour
             t.gameObject.SetActive(false);
         }
         //SpawnFood();
-
+       
     }
 
     // Start is called before the first frame update
@@ -44,6 +45,7 @@ public class LvlGrid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
     }
 
  
@@ -81,8 +83,9 @@ public class LvlGrid : MonoBehaviour
         
     }*/
 
+    
     public bool TestCapitaliste(GameObject item)
-    {
+    {//Pas utilisée
         switch (item.GetComponent<Food>().type)
         {
             default:
@@ -97,15 +100,15 @@ public class LvlGrid : MonoBehaviour
     {
         for (int i = 0 ; i < foodManager.ItemList.Count; i++)
         {
-            if ((foodManager.ItemList[i].transform.position.y <= snakeGridPos.y + 2 && foodManager.ItemList[i].transform.position.y >= snakeGridPos.y - 2)
-            && (foodManager.ItemList[i].transform.position.x <= snakeGridPos.x + 2 && foodManager.ItemList[i].transform.position.x >= snakeGridPos.x - 2))
+            if ((foodManager.ItemList[i].transform.position.y <= snakeGridPos.y + dimensionFood && foodManager.ItemList[i].transform.position.y >= snakeGridPos.y - dimensionFood)
+            && (foodManager.ItemList[i].transform.position.x <= snakeGridPos.x + dimensionFood && foodManager.ItemList[i].transform.position.x >= snakeGridPos.x - dimensionFood))
             {
                 if (foodManager.ItemList[i].GetComponent<Food>().type == Food.ItemType.Capitaliste)
                 {
                     dangerZones[indexDangerZones].gameObject.SetActive(true);
                     //dangerZones[indexDangerZones].gameObject.GetComponent<DangerAppear>().Appear();
                     indexDangerZones++;
-                    snake.snakeSize ++;
+                    snake.snakeSize = snake.snakeSize+10;
                     snake.CreateSnakeBod();                   
                     snake.decroisTimer = snake.decroisTimerMax;
                 }
@@ -114,8 +117,20 @@ public class LvlGrid : MonoBehaviour
                     dangerZones[indexDangerZones].gameObject.SetActive(true);
                     //dangerZones[indexDangerZones].gameObject.GetComponent<DangerAppear>().Appear();
                     indexDangerZones++;
+                    snake.snakeSize = snake.snakeSize + 3;
+                    snake.CreateSnakeBod();
                     snake.decroisTimer = snake.decroisTimerMax;
                 }
+                else if (foodManager.ItemList[i].GetComponent<Food>().type == Food.ItemType.GreenWash)
+                {
+                    dangerZones[indexDangerZones].gameObject.SetActive(true);
+                    //dangerZones[indexDangerZones].gameObject.GetComponent<DangerAppear>().Appear();
+                    indexDangerZones++;
+                    snake.snakeSize = snake.snakeSize + 5;
+                    snake.CreateSnakeBod();
+                    snake.decroisTimer = snake.decroisTimerMax;
+                }
+
                 Object.Destroy(foodManager.ItemList[i]);
                 Debug.Log("Nomed nomed");
                 //SpawnFood();
