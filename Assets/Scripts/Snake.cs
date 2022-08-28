@@ -123,6 +123,7 @@ public class Snake : MonoBehaviour
         int iLongueur = 0;
         int i = 0;
 
+        // changer ration fumee et petrol dans game asset : comme ça bouge plein de fois faut l'augmenter
         while (i < snakeSize)
         {
             for (int j = 0; j < InitialLongueurParDirection[iLongueur]; j++)
