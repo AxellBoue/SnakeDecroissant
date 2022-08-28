@@ -3445,10 +3445,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1035930455097283363, guid: 2bdc129afb157fa48bd340399fdda450, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1035930455097283363, guid: 2bdc129afb157fa48bd340399fdda450, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1035930456257926440, guid: 2bdc129afb157fa48bd340399fdda450, type: 3}
       propertyPath: foodManager
       value: 
       objectReference: {fileID: 859670256}
+    - target: {fileID: 1035930456257926443, guid: 2bdc129afb157fa48bd340399fdda450, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7e645ed1463ab1542b6e6c1a18bb6a89, type: 3}
     - target: {fileID: 1035930456257926444, guid: 2bdc129afb157fa48bd340399fdda450, type: 3}
       propertyPath: m_Name
       value: MiliGreen ecolo
@@ -3506,10 +3518,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2115946104, guid: 4b65d4b7ef3d685499a70605fe53438b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115946104, guid: 4b65d4b7ef3d685499a70605fe53438b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.3
+      objectReference: {fileID: 0}
     - target: {fileID: 1211982409068678912, guid: 4b65d4b7ef3d685499a70605fe53438b, type: 3}
       propertyPath: foodManager
       value: 
       objectReference: {fileID: 859670256}
+    - target: {fileID: 1211982409068678913, guid: 4b65d4b7ef3d685499a70605fe53438b, type: 3}
+      propertyPath: m_Size.x
+      value: 16.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211982409068678913, guid: 4b65d4b7ef3d685499a70605fe53438b, type: 3}
+      propertyPath: m_Size.y
+      value: 16.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211982409068678913, guid: 4b65d4b7ef3d685499a70605fe53438b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7e645ed1463ab1542b6e6c1a18bb6a89, type: 3}
     - target: {fileID: 1211982409068678942, guid: 4b65d4b7ef3d685499a70605fe53438b, type: 3}
       propertyPath: m_Name
       value: Militant lutte
@@ -3524,7 +3556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1211982409068678943, guid: 4b65d4b7ef3d685499a70605fe53438b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1211982409068678943, guid: 4b65d4b7ef3d685499a70605fe53438b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3585,11 +3617,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2386366261863877448, guid: a7c058bb4f2a9a84da66c4f9be83c5b8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -44.1
+      value: -46
       objectReference: {fileID: 0}
     - target: {fileID: 2386366261863877448, guid: a7c058bb4f2a9a84da66c4f9be83c5b8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2386366261863877448, guid: a7c058bb4f2a9a84da66c4f9be83c5b8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3627,10 +3659,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Militant handi
       objectReference: {fileID: 0}
+    - target: {fileID: 2386366261863877450, guid: a7c058bb4f2a9a84da66c4f9be83c5b8, type: 3}
+      propertyPath: m_Size.x
+      value: 16.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 2386366261863877450, guid: a7c058bb4f2a9a84da66c4f9be83c5b8, type: 3}
+      propertyPath: m_Size.y
+      value: 16.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2386366261863877450, guid: a7c058bb4f2a9a84da66c4f9be83c5b8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7e645ed1463ab1542b6e6c1a18bb6a89, type: 3}
     - target: {fileID: 2386366261863877451, guid: a7c058bb4f2a9a84da66c4f9be83c5b8, type: 3}
       propertyPath: foodManager
       value: 
       objectReference: {fileID: 859670256}
+    - target: {fileID: 2386366262318356494, guid: a7c058bb4f2a9a84da66c4f9be83c5b8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2386366262318356494, guid: a7c058bb4f2a9a84da66c4f9be83c5b8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7c058bb4f2a9a84da66c4f9be83c5b8, type: 3}
 --- !u!1001 &3928587907178052355
@@ -3640,6 +3692,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3928587907405883337, guid: e8447c8915a70e746b7ab3f9896c3477, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3928587907405883337, guid: e8447c8915a70e746b7ab3f9896c3477, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3928587908639678112, guid: e8447c8915a70e746b7ab3f9896c3477, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7e645ed1463ab1542b6e6c1a18bb6a89, type: 3}
     - target: {fileID: 3928587908639678113, guid: e8447c8915a70e746b7ab3f9896c3477, type: 3}
       propertyPath: foodManager
       value: 
@@ -3701,6 +3765,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5426461420221998891, guid: 6ee8410b743c31b4bad3912fed9d4e24, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.4
+      objectReference: {fileID: 0}
     - target: {fileID: 5426461420344055096, guid: 6ee8410b743c31b4bad3912fed9d4e24, type: 3}
       propertyPath: m_Name
       value: MiliGreen decroissance
@@ -3753,6 +3821,10 @@ PrefabInstance:
       propertyPath: foodManager
       value: 
       objectReference: {fileID: 859670256}
+    - target: {fileID: 5426461420344055103, guid: 6ee8410b743c31b4bad3912fed9d4e24, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e24910ddbcb145d4cbb8fccd05c3ae55, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ee8410b743c31b4bad3912fed9d4e24, type: 3}
 --- !u!1001 &7372321378215999186
@@ -3766,6 +3838,18 @@ PrefabInstance:
       propertyPath: foodManager
       value: 
       objectReference: {fileID: 859670256}
+    - target: {fileID: 7372321378147388653, guid: ffdb8da230ad4b4419277728a1ba0999, type: 3}
+      propertyPath: m_Size.x
+      value: 16.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 7372321378147388653, guid: ffdb8da230ad4b4419277728a1ba0999, type: 3}
+      propertyPath: m_Size.y
+      value: 16.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7372321378147388653, guid: ffdb8da230ad4b4419277728a1ba0999, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7e645ed1463ab1542b6e6c1a18bb6a89, type: 3}
     - target: {fileID: 7372321378147388654, guid: ffdb8da230ad4b4419277728a1ba0999, type: 3}
       propertyPath: m_Name
       value: Militant hors systeme
@@ -3776,11 +3860,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7372321378147388655, guid: ffdb8da230ad4b4419277728a1ba0999, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -34.6
+      value: -34
       objectReference: {fileID: 0}
     - target: {fileID: 7372321378147388655, guid: ffdb8da230ad4b4419277728a1ba0999, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 37.4
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 7372321378147388655, guid: ffdb8da230ad4b4419277728a1ba0999, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3814,6 +3898,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7372321378810511239, guid: ffdb8da230ad4b4419277728a1ba0999, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 7372321378810511239, guid: ffdb8da230ad4b4419277728a1ba0999, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffdb8da230ad4b4419277728a1ba0999, type: 3}
 --- !u!1001 &8331475712943102586
@@ -3823,10 +3915,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8331475711575720433, guid: cae1a498100c8f94889e5c96e15660ce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.3
+      objectReference: {fileID: 0}
     - target: {fileID: 8331475711897787097, guid: cae1a498100c8f94889e5c96e15660ce, type: 3}
       propertyPath: m_Name
       value: MiliGreen lgbt
       objectReference: {fileID: 0}
+    - target: {fileID: 8331475711897787100, guid: cae1a498100c8f94889e5c96e15660ce, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7e645ed1463ab1542b6e6c1a18bb6a89, type: 3}
     - target: {fileID: 8331475711897787101, guid: cae1a498100c8f94889e5c96e15660ce, type: 3}
       propertyPath: foodManager
       value: 
@@ -3932,9 +4032,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Militant capitalisme
       objectReference: {fileID: 0}
+    - target: {fileID: 8702201416590824470, guid: dbd98f1c83217714eac146d38bbf0089, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e24910ddbcb145d4cbb8fccd05c3ae55, type: 3}
     - target: {fileID: 8702201416590824471, guid: dbd98f1c83217714eac146d38bbf0089, type: 3}
       propertyPath: foodManager
       value: 
       objectReference: {fileID: 859670256}
+    - target: {fileID: 8702201416749816094, guid: dbd98f1c83217714eac146d38bbf0089, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbd98f1c83217714eac146d38bbf0089, type: 3}
