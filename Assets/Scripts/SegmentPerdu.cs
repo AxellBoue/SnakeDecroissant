@@ -5,6 +5,7 @@ using UnityEngine;
 public class SegmentPerdu : MonoBehaviour
 {
     public bool detach;
+    public bool marche = false; 
     public Transform target;
     public Vector3 targetPos;
     public FoodManager foodManager;
@@ -18,7 +19,7 @@ public class SegmentPerdu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (detach && target && transform.position != target.transform.position)
+        if (detach && marche && target && transform.position != target.transform.position)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPos, 0.1f);
 
@@ -46,7 +47,14 @@ public class SegmentPerdu : MonoBehaviour
         newDisolve.transform.localPosition = Vector3.zero;
         // change rotations 
         newDisolve.transform.GetChild(1).Rotate(-transform.rotation.eulerAngles);
-        newDisolve.transform.GetChild(2).Rotate(-transform.rotation.eulerAngles);
+        //newDisolve.transform.GetChild(0).Rotate(-transform.rotation.eulerAngles);
+        StartCoroutine("startMarche");
+    }
+
+    IEnumerator startMarche()
+    {
+        yield return new WaitForSeconds(1f);
+        marche = true;
     }
 
 }
