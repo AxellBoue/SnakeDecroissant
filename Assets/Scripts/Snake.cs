@@ -124,6 +124,11 @@ public class Snake : MonoBehaviour
         int i = 0;
 
         // changer ration fumee et petrol dans game asset : comme ça bouge plein de fois faut l'augmenter
+        int ancienRatioFumee = gameAssets.ratioFumee;
+        int ancienRatioPetrole = gameAssets.ratioPetrole;
+        gameAssets.ratioFumee = 50;
+        gameAssets.ratioPetrole = 50;
+        
         while (i < snakeSize)
         {
             for (int j = 0; j < InitialLongueurParDirection[iLongueur]; j++)
@@ -142,6 +147,8 @@ public class Snake : MonoBehaviour
             }
         }
         gridMoveTimer = 0;
+        gameAssets.ratioFumee = ancienRatioFumee;
+        gameAssets.ratioPetrole = ancienRatioPetrole;
     }
 
     private void OnControl()
