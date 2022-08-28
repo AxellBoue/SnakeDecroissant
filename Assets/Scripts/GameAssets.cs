@@ -31,6 +31,7 @@ public class GameAssets : MonoBehaviour
 	public Color bleu;
 	public float intensiteBleu = 1.6f;
 	public float vitesseBleu = 150;
+	public bool isRed;
 	//dissolve
 	public GameObject snakeDissolve;
 
@@ -45,6 +46,18 @@ public class GameAssets : MonoBehaviour
 		matClignotte.SetFloat("_ClignotteRatio", 0);
 		matClignotte.SetColor("_ClignotteColor", rouge);
 		matClignotte.SetFloat("_ClignotteSpeed", vitesseRouge);
+		isRed = false;
+	}
+	public void StopClignoRouge()
+	{
+		if(isRed)
+		{
+			Debug.Log("C'est rouge");
+			matClignotte.SetFloat("_ClignotteRatio", 0);
+			matClignotte.SetColor("_ClignotteColor", rouge);
+			matClignotte.SetFloat("_ClignotteSpeed", vitesseRouge);
+
+		}
 	}
 	public void ClignotteDead()
 	{
@@ -52,7 +65,7 @@ public class GameAssets : MonoBehaviour
 		matClignotte.SetColor("_ClignotteColor", bleu);
 		matClignotte.SetFloat("_ClignotteRatio", intensiteBleu);
 		matClignotte.SetFloat("_ClignotteSpeed", vitesseBleu);
-
+		isRed = false;
 
 	}
 
@@ -62,6 +75,7 @@ public class GameAssets : MonoBehaviour
 		matClignotte.SetColor("_ClignotteColor", rouge);
 		matClignotte.SetFloat("_ClignotteRatio", intensiteRouge);
 		matClignotte.SetFloat("_ClignotteSpeed", vitesseRouge);
+		isRed=true;
 
 
 	}

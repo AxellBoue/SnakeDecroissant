@@ -62,7 +62,7 @@ public class SnakeHitbox : MonoBehaviour
             snake.gridMoveTimerMax = 0.1f;
             snake.decroisTimerMax = 10f;        
             inMilit = false;
-            GameAssets.instance.StopCligno();
+            GameAssets.instance.StopClignoRouge();
             collision.gameObject.GetComponent<Militant>().isSnakeClose = false;
 
         }

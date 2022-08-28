@@ -327,6 +327,16 @@ public class Snake : MonoBehaviour
         GameAssets.instance.StopCligno();
     }
 
+    IEnumerator ClignoBleu()
+    {
+
+        GameAssets.instance.ClignotteDead();
+        //Debug.Log("Fin !");
+        yield return new WaitForSeconds(2f);
+
+        GameAssets.instance.StopCligno();
+    }
+
     private class SnakeBodypart
     {
         private SnakeMovePosition snakeMovePos;

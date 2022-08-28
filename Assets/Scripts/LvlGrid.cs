@@ -115,6 +115,7 @@ public class LvlGrid : MonoBehaviour
                     snake.CreateSnakeBod();
                     Instantiate(foodManager.prefab10, chiffrePos, Quaternion.identity);
                     snake.decroisTimer = 0;
+                    snake.StartCoroutine("ClignoBleu");
                 }
                 else if (foodManager.ItemList[i].GetComponent<Food>().type == Food.ItemType.Militant)
                 {
@@ -125,6 +126,8 @@ public class LvlGrid : MonoBehaviour
                     snake.CreateSnakeBod();
                     Instantiate(foodManager.prefab3, chiffrePos, Quaternion.identity);
                     snake.decroisTimer = 0;
+                    snake.StartCoroutine("ClignoBleu");
+
                 }
                 else if (foodManager.ItemList[i].GetComponent<Food>().type == Food.ItemType.GreenWash)
                 {
@@ -135,6 +138,8 @@ public class LvlGrid : MonoBehaviour
                     snake.CreateSnakeBod();
                     Instantiate(foodManager.prefab5, chiffrePos, Quaternion.identity);
                     snake.decroisTimer = 0;
+                    snake.StartCoroutine("ClignoBleu");
+
                 }
 
                 Object.Destroy(foodManager.ItemList[i]);
@@ -162,6 +167,6 @@ public class LvlGrid : MonoBehaviour
 
     }
 
-   
+  
 
 }
